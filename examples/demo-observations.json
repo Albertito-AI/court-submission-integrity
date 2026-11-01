@@ -1,0 +1,126 @@
+{
+  "cases": {
+    "adverse": {
+      "citation_text_statuses": [
+        "QUOTE_NOT_MATCHED",
+        "QUOTE_NOT_MATCHED",
+        "QUOTE_AT_DIFFERENT_PINPOINT",
+        "NOT_CHECKED",
+        "PINPOINT_UNAVAILABLE"
+      ],
+      "engine_version": "0.1.0a1",
+      "filing_decision": "NONE",
+      "finding_codes": [
+        "ARGUMENT_DEPENDENCY_CYCLE",
+        "ARITHMETIC_MISMATCH",
+        "ASSERTION_INCONSISTENCY_CANDIDATE",
+        "BLOCK_WITHOUT_ANCHORED_CLAIM",
+        "CHRONOLOGY_ORDER_CONFLICT",
+        "CITATION_METADATA_MISMATCH",
+        "EVIDENCE_NOT_LINKED",
+        "PINPOINT_UNAVAILABLE",
+        "PROFILE_NOT_APPROVED",
+        "QUOTE_AT_DIFFERENT_PINPOINT",
+        "QUOTE_NOT_MATCHED",
+        "REQUEST_RESPONSE_NOT_SUPPLIED",
+        "RESPONSE_SOURCE_NOT_SUPPLIED",
+        "SCOPE_LIMIT",
+        "SOURCE_INCOMPLETE",
+        "SOURCE_NOT_SUPPLIED",
+        "SUBSTANTIVE_REVIEW_REQUIRED"
+      ],
+      "finding_counts": {
+        "CHECK_FINDING": 6,
+        "REVIEW_CANDIDATE": 2,
+        "UNRESOLVED": 19
+      },
+      "input_sha256": {
+        "adverse.json": "7d2492cf3aa1bb53b87040cae623667fa638e710c9168629609e6dfdbef901a4"
+      },
+      "package_digest": "70c9b40a953f49d73647a4125c269d897e3cc467121020b760585666555112a6",
+      "status": "HUMAN_REVIEW_REQUIRED",
+      "truth_certification": false
+    },
+    "intake": {
+      "citation_candidates": 4,
+      "citation_coverage": "NOT_EXHAUSTIVE",
+      "citation_text_statuses": [
+        "LOCATOR_PRESENT_NO_QUOTATION",
+        "PINPOINT_NOT_FOUND",
+        "PINPOINT_NOT_SUPPLIED",
+        "NOT_CHECKED"
+      ],
+      "engine_version": "0.1.0a1",
+      "filing_decision": "NONE",
+      "finding_codes": [
+        "BLOCK_WITHOUT_ANCHORED_CLAIM",
+        "PINPOINT_NOT_FOUND",
+        "PINPOINT_NOT_SUPPLIED",
+        "PROFILE_NOT_APPROVED",
+        "QUOTATION_NOT_SUPPLIED",
+        "SCOPE_LIMIT",
+        "SOURCE_INCOMPLETE",
+        "SOURCE_NOT_SUPPLIED",
+        "SUBSTANTIVE_REVIEW_REQUIRED"
+      ],
+      "finding_counts": {
+        "CHECK_FINDING": 1,
+        "UNRESOLVED": 12
+      },
+      "input_sha256": {
+        "intake_sources.json": "9b47171998363fe909d76150964eadb469c92696d96fe24f75de386b814441c5",
+        "intake_submission.txt": "0af410bc6f1a8a22236398b4c1b476f4321110c129ca95bc8b11c5b5d5e84943"
+      },
+      "package_digest": "6d086d22f3eeb0bdbef1d770d3d116acf68fb25f9b42929438975d9702910da7",
+      "status": "HUMAN_REVIEW_REQUIRED",
+      "truth_certification": false
+    },
+    "matched": {
+      "citation_text_statuses": [
+        "QUOTE_MATCH_IN_SUPPLIED_PASSAGE"
+      ],
+      "engine_version": "0.1.0a1",
+      "filing_decision": "NONE",
+      "finding_codes": [
+        "PROFILE_NOT_APPROVED",
+        "SCOPE_LIMIT",
+        "SUBSTANTIVE_REVIEW_REQUIRED"
+      ],
+      "finding_counts": {
+        "UNRESOLVED": 3
+      },
+      "input_sha256": {
+        "matched.json": "68f29532903fbb088c1c3b2105752c9cb2d4647fc97cfcd72a5e7b82e566db7c"
+      },
+      "package_digest": "bcced727fb46a88058c5b5d8e885e61c550c63b15a8fe06fbd73daa0f673ec3f",
+      "status": "HUMAN_REVIEW_REQUIRED",
+      "truth_certification": false
+    },
+    "unknown": {
+      "citation_text_statuses": [
+        "NOT_CHECKED"
+      ],
+      "engine_version": "0.1.0a1",
+      "filing_decision": "NONE",
+      "finding_codes": [
+        "PROFILE_NOT_APPROVED",
+        "RESPONSE_SOURCE_NOT_SUPPLIED",
+        "SCOPE_LIMIT",
+        "SOURCE_NOT_SUPPLIED",
+        "SUBSTANTIVE_REVIEW_REQUIRED"
+      ],
+      "finding_counts": {
+        "UNRESOLVED": 5
+      },
+      "input_sha256": {
+        "unknown.json": "350ed017df8b36b3ff27ecdf8729076a2cb15593ecc9a17b011e2f3eda05659e"
+      },
+      "package_digest": "6ef1c357d58d42d3b020f20a2e5805c5231107d7869b311b79f5368cf2f2a5ee",
+      "status": "HUMAN_REVIEW_REQUIRED",
+      "truth_certification": false
+    }
+  },
+  "independent_evaluation": "NOT_PERFORMED",
+  "record_schema": "1",
+  "scope": "FICTIONAL_INTERNAL_DEMONSTRATION"
+}
