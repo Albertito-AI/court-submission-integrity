@@ -51,3 +51,31 @@ authenticate a document or a reviewer. No private research text is republished.
 
 No milestone date, customer demand, funding, deployment or court approval is
 established by publication. Existing rights and operational gates remain intact.
+
+## CSI-CONT-20261101-1 | 1 November 2026 | Recurring court-operations improvement
+
+Albert requested continuous upgrading towards demonstrated court usefulness.
+The existing Academic GitHub Development automation was updated successfully,
+without changing its daily flexible morning schedule, timezone or enabled state.
+It now includes daily CSI checks and a Wednesday court-workflow checkpoint/report,
+starting 4 November 2026, within existing priorities and shared capacity.
+No duplicate task was created and no future execution or efficiency gain is claimed.
+
+The dedicated launch was independently read back from GitHub as merged PR #1,
+commit `236c8b02ab536f7b99959bac2b4f8430997bb7b8`. This is publication evidence,
+not independent human evaluation. The [improvement protocol](CONTINUOUS_IMPROVEMENT.md)
+records source-based work selection, accuracy/false-alarm checks, whole-workflow
+human effort, independent evaluation gates, deferral reporting and stop criteria.
+README navigation is updated; runtime, tests, rights and version are unchanged.
+
+Validation for this documentation change: the 17 checked source, test, fixture
+and boundary-document blobs matched exact main-branch identifiers; all 87 local
+tests passed with no skips on CPython 3.13.5/Linux with pypdf 5.9.0. Four fictional
+CLI workflows completed, and Python compilation passed. Changed Markdown links
+and whitespace were checked. No hosted CI, model calls or court data were used.
+Review was internal and AI-assisted. Independent benefit remains NOT_VERIFIED.
+
+Next owner/action: the development task should complete a bounded authoritative-
+source-resolution requirement/baseline; the Wednesday checkpoint must show evidence,
+progress or a dated reason for deferral. Independent human evaluation and any
+court shadow pilot retain their separate permission and readiness requirements.

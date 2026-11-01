@@ -75,6 +75,8 @@ Read the [product brief](docs/PRODUCT_BRIEF.md), [input contract](docs/INPUT_CON
 [research references](docs/RESEARCH_SOURCES.md) and [progress record](docs/PROGRESS.md).
 The [global roadmap](docs/GLOBAL_ROADMAP.md) separates shared engineering from
 jurisdiction-specific legal and institutional evaluation.
+The [continuous improvement protocol](docs/CONTINUOUS_IMPROVEMENT.md) links recurring
+maintenance to evidenced court tasks, independent evaluation and measured outcomes.
 
 The repository includes runnable TXT/JSON fixtures and the original example
 generators. Prebuilt binary samples and historical logs remain in the owner's
