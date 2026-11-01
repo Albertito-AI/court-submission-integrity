@@ -12,9 +12,33 @@ This is the dedicated project repository. It is independent of RegNav and has no
 runtime dependency on another portfolio project. The earlier research-hub copy is
 retained as historical provenance, not the location for continuing development.
 
-[Run the examples](#run-the-examples) | [Capabilities](#what-the-alpha-checks) |
+[See demo](#see-it-in-action) | [Capability guide](docs/CAPABILITIES.md) |
+[Collaborate and evaluate](docs/COLLABORATION.md) | [Run the examples](#run-the-examples) |
 [Roadmap](docs/GLOBAL_ROADMAP.md) | [Validation](docs/VALIDATION.md) |
 [Publication record](docs/PUBLICATION.md) | [Rights](RIGHTS.md)
+
+## See it in action
+
+**[Read the three-minute fictional demonstration](docs/DEMO.md).** No installation
+is needed to inspect the examples and actual recorded findings.
+
+| Supplied fictional material | What the program actually returns |
+| --- | --- |
+| Submission quotation: `Total: SGD 1,400.`; source passage: `Total: SGD 1,250.` | `QUOTE_NOT_MATCHED`, with both passages and their source location |
+| Quotation points to paragraph 9 but appears at paragraph 8 in the supplied source | `QUOTE_AT_DIFFERENT_PINPOINT`, without silently changing the submission |
+| A source is absent from the supplied package | `SOURCE_NOT_SUPPLIED`, unresolved rather than a finding of fabrication |
+
+The walkthrough also shows annotated arithmetic, chronology, production-response
+and argument-dependency checks. [Recorded observations](examples/demo-observations.json)
+are reproducible with `python -m examples.record_demo --check`. These are constructed
+examples, not evidence of general factual accuracy or reduced court backlogs.
+
+**For courts and justice-technology teams:** the aim is to help filers correct
+avoidable defects and help registry/judicial reviewers locate the material that
+needs attention. [The capability guide](docs/CAPABILITIES.md) distinguishes working
+components from future source verification, reasoning assistance and integration.
+[Discuss a scoped fictional-data evaluation](docs/COLLABORATION.md) before any real
+case processing, institutional participation or live-system access.
 
 ## Run the examples
 
