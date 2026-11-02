@@ -63,6 +63,13 @@ the source. Python 3.10+ is the compatibility target; the recorded local checks 
 **CPython 3.13.5/Linux**. PDF intake needs an already installed optional `pypdf`
 parser. Without it, two PDF tests are skipped. No package is installed automatically.
 
+The [automated regression workflow](.github/workflows/tests.yml) runs the unittest
+suite and independently verifies the recorded fictional demonstration on Python
+3.10, 3.12 and 3.13. It installs the optional PDF parser in CI so that the PDF
+cases are exercised rather than skipped. These checks establish reproducibility
+of the supplied test cases, not the correctness of real legal submissions or
+any court adoption.
+
 Additional fictional examples:
 
 ```sh
