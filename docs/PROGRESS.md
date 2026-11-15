@@ -1,5 +1,27 @@
 # Progress and next gates
 
+## CSI-20261115-RELIABILITY | Core reliability and comparative learning
+
+Three independently reproduced defects were repaired: caller Decimal settings
+affecting bounded arithmetic, unsupported pinpoint tokens becoming shorter
+locators, and a JSON integer-conversion error escaping the CLI input contract.
+The runtime now uses a complete local arithmetic context, conservative complete-
+token recognition and explicit invalid-input handling.
+
+Observed local acceptance: 100 tests without skips, four fictional CLI workflows,
+the recorded demonstration, distinct agent review and exact rollback/reapply.
+The new regressions fail against the original runtime. The
+[dated validation record](VALIDATION_2026-11-15.md) records the environment,
+independent checks, recognition trade-offs and limits. Integration status is
+established by the actual pull request and associated workflow runs.
+
+The [fourteen-repository review](research/2026-11-15-repository-comparison.md)
+and pinned source index distinguish useful design concepts, conditional static
+findings and unsuitable transfers. No upstream code was executed or copied.
+Future work remains a permitted, versioned authority resolver, followed by
+source-bound correction and independent workflow evaluation. Legal accuracy,
+court readiness and an efficiency multiplier remain unverified.
+
 ## CSI-20261101-DEDICATED-03 | Dedicated repository launch
 
 **Owner:** Albert Tan Sin Hon. **Implementation/review:** AI-assisted engineering.

@@ -109,6 +109,11 @@ jurisdiction-specific legal and institutional evaluation.
 The [continuous improvement protocol](docs/CONTINUOUS_IMPROVEMENT.md) links recurring
 maintenance to evidenced court tasks, independent evaluation and measured outcomes.
 
+The [fourteen-repository comparison](docs/research/2026-11-15-repository-comparison.md)
+records pinned source evidence, useful design lessons and unsuitable transfers.
+The [15 November reliability record](docs/VALIDATION_2026-11-15.md) covers three
+core repairs and their regression, independent-review and rollback checks.
+
 The repository includes runnable TXT/JSON fixtures and the original example
 generators. Prebuilt binary samples and historical logs remain in the owner's
 preserved archive. The optional `python -m examples.make_intake_documents` generator

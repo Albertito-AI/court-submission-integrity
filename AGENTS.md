@@ -15,8 +15,10 @@ zero-network defaults and the distinction between source presence and support.
 Never change a match into a truth, admissibility or merits certificate.
 
 No hosted CI, model calls, hosting purchases or other metered operation may be
-activated without a verified authorised resource envelope. No CI workflow is
-included in this alpha. Do not resolve that by changing private-data visibility.
+activated without a verified authorised resource envelope. The existing
+regression workflow uses standard public-repository runners; inspect its current
+configuration and authorised resource envelope before triggering it. Do not
+resolve resource constraints by changing private-data visibility.
 
 Run the unittest suite and complete CLI examples. Record actual environment,
 failures, skipped checks and limits. Local tests are not independent adoption or

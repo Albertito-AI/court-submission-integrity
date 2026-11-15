@@ -1,0 +1,1858 @@
+{
+  "schema": "atlas-court-repository-comparison/v1",
+  "comparison_date": "2026-11-15",
+  "status": "completed read-only research; Atlas runtime repairs accepted locally; hosted integration recorded separately in the pull request",
+  "scope": "14 accessible repositories at pinned default heads; representative source/README/licence/test inspection. No upstream code execution, installs, deployments, credential tests or live probes.",
+  "rights": "Independent design lessons only. Public source visibility is not a reuse grant; software licences do not automatically clear bundled data, legal texts, models or assets. No foreign source blobs are included.",
+  "report_provenance": [
+    {
+      "group": "primary",
+      "report": "research_primary/review.json",
+      "sha256": "f9a41c9e99c13d54da3182cde541324461d050f14d949efbbe90651c2db40f4c"
+    },
+    {
+      "group": "intake",
+      "report": "research_intake/review3-intake-provenance.json",
+      "sha256": "7bb67a34d75cd568f7b132a1932644856bf5404be172db5069e6a423e058a705"
+    },
+    {
+      "group": "caseflow",
+      "report": "research_caseflow/research-caseflow.json",
+      "sha256": "9f58bf13c070b93dc338960e87ce2c9a6b01edd051ca6ceff7d8321e2b19d4d4"
+    },
+    {
+      "group": "reasoning",
+      "report": "research_reasoning/repository_findings.json",
+      "sha256": "d127fdca03b2fee535034b144d9b43877d0e5d5cf1be1371a1251a04207a5c60"
+    }
+  ],
+  "repositories": [
+    {
+      "repository": "bcgov/SCJ-Online-Booking",
+      "accessible": true,
+      "default_branch": "main",
+      "head": "80b75ce123d54a05d4e996201d8a1ed59d800336",
+      "tree": "c86f7dd30b51b5f235868f3b32530efafef9b8c7",
+      "commit_url": "https://github.com/bcgov/SCJ-Online-Booking/commit/80b75ce123d54a05d4e996201d8a1ed59d800336",
+      "licence_label": "Apache-2.0",
+      "licence_inspection_status": "inspected project licence",
+      "licence_details": {
+        "identifier": "Apache-2.0",
+        "source": "LICENSE",
+        "handling": "Preserve applicable copyright, licence and NOTICE terms if source is reused. Prefer independent Atlas implementation of workflow concepts; third-party dependencies and assets need separate treatment.",
+        "url": "https://github.com/bcgov/SCJ-Online-Booking/blob/80b75ce123d54a05d4e996201d8a1ed59d800336/LICENSE"
+      },
+      "implemented_at_reviewed_head": "MVC booking selection, review and confirmation; regular bookings and fair-use requests have distinct outcomes.",
+      "bounded_findings": "The sampled failure/success integration tests only assert a non-null response; a placeholder unit test proves no booking behaviour. SOAP calls depend on environment selection.",
+      "decision": {
+        "adopt_independently": "Explicit review and completion states; bounded receipts.",
+        "defer": "Any live court integration.",
+        "reject": "BC scheduling rules, lottery or fairness claims and inherited remote calls."
+      },
+      "test_and_maintenance_evidence": "Default main commit 2026-11-06. Four exact-head CodeQL checks succeeded. These are static-analysis outcomes, not observed functional booking-suite success.",
+      "findings_section": "2026-11-15-repository-comparison.md#r1",
+      "source_group": "primary",
+      "sources": [
+        {
+          "path": "app/Controllers/ScLotteryEnabledControllerBase.cs",
+          "lines": [
+            86,
+            157
+          ],
+          "url": "https://github.com/bcgov/SCJ-Online-Booking/blob/80b75ce123d54a05d4e996201d8a1ed59d800336/app/Controllers/ScLotteryEnabledControllerBase.cs#L86-L157",
+          "anchor": "AvailableDatesAsync"
+        },
+        {
+          "path": "app/Controllers/ScLotteryEnabledControllerBase.cs",
+          "lines": [
+            190,
+            225
+          ],
+          "url": "https://github.com/bcgov/SCJ-Online-Booking/blob/80b75ce123d54a05d4e996201d8a1ed59d800336/app/Controllers/ScLotteryEnabledControllerBase.cs#L190-L225",
+          "anchor": "CaseConfirm"
+        },
+        {
+          "path": "app/Services/DataWriterService.cs",
+          "lines": [
+            56,
+            88
+          ],
+          "url": "https://github.com/bcgov/SCJ-Online-Booking/blob/80b75ce123d54a05d4e996201d8a1ed59d800336/app/Services/DataWriterService.cs#L56-L88",
+          "anchor": "SaveLotteryEntry"
+        },
+        {
+          "path": "app/Services/DataWriterService.cs",
+          "lines": [
+            101,
+            147
+          ],
+          "url": "https://github.com/bcgov/SCJ-Online-Booking/blob/80b75ce123d54a05d4e996201d8a1ed59d800336/app/Services/DataWriterService.cs#L101-L147",
+          "anchor": "SaveLotteryEntry"
+        },
+        {
+          "path": "tests/RemoteApiTests.cs",
+          "lines": [
+            17,
+            34
+          ],
+          "url": "https://github.com/bcgov/SCJ-Online-Booking/blob/80b75ce123d54a05d4e996201d8a1ed59d800336/tests/RemoteApiTests.cs#L17-L34",
+          "anchor": "RemoteApiTests"
+        },
+        {
+          "path": "tests/RemoteApiTests.cs",
+          "lines": [
+            65,
+            105
+          ],
+          "url": "https://github.com/bcgov/SCJ-Online-Booking/blob/80b75ce123d54a05d4e996201d8a1ed59d800336/tests/RemoteApiTests.cs#L65-L105",
+          "anchor": "BookingHearingFail / BookingHearingSuccess"
+        },
+        {
+          "path": "tests/UnitTest1.cs",
+          "lines": [
+            7,
+            11
+          ],
+          "url": "https://github.com/bcgov/SCJ-Online-Booking/blob/80b75ce123d54a05d4e996201d8a1ed59d800336/tests/UnitTest1.cs#L7-L11",
+          "anchor": "Test1"
+        }
+      ]
+    },
+    {
+      "repository": "nationalarchives/ds-caselaw-judiciary-guidance",
+      "accessible": true,
+      "default_branch": "main",
+      "head": "59aaf3806edf516d54912d5662abbf13a0539177",
+      "tree": "0de73118ddac31cd806c5066488e7e4f8ed5d080",
+      "commit_url": "https://github.com/nationalarchives/ds-caselaw-judiciary-guidance/commit/59aaf3806edf516d54912d5662abbf13a0539177",
+      "licence_label": "No explicit grant found",
+      "licence_inspection_status": "complete-tree and content inspection; API licence absent",
+      "licence_details": {
+        "identifier": null,
+        "source": "Full recursive tree and inspected README/templates/content; GitHub licence metadata null.",
+        "handling": "No explicit repository LICENSE/NOTICE or reuse grant found. Do not infer Open Government Licence from public-sector ownership. Use attributed paraphrases and independently written code; resolve rights before copying text/assets.",
+        "url": null
+      },
+      "implemented_at_reviewed_head": "Static Pelican publishing guidance covering neutral citations, transformations and redaction.",
+      "bounded_findings": "This repository is not an authority resolver or legal-validation engine. Guidance on replacing publication does not establish absence of internal revision history.",
+      "decision": {
+        "adopt_independently": "Source and derivative identities; jurisdiction-scoped citation profiles and unresolved states.",
+        "defer": "Authority resolution until permitted versioned sources exist.",
+        "reject": "Unlicensed text/assets, redaction certification and treating unrecognised citations as fabricated."
+      },
+      "test_and_maintenance_evidence": "Default main commit 2026-11-14. Exact-head build, deploy and pre-commit checks succeeded. Formatting/build validation is not legal or resolver conformance testing.",
+      "findings_section": "2026-11-15-repository-comparison.md#r2",
+      "source_group": "primary",
+      "sources": [
+        {
+          "path": "content/about_this_guidance.html",
+          "lines": [
+            7,
+            35
+          ],
+          "url": "https://github.com/nationalarchives/ds-caselaw-judiciary-guidance/blob/59aaf3806edf516d54912d5662abbf13a0539177/content/about_this_guidance.html#L7-L35"
+        },
+        {
+          "path": "content/ncn.html",
+          "lines": [
+            7,
+            9
+          ],
+          "url": "https://github.com/nationalarchives/ds-caselaw-judiciary-guidance/blob/59aaf3806edf516d54912d5662abbf13a0539177/content/ncn.html#L7-L9"
+        },
+        {
+          "path": "content/ncn.html",
+          "lines": [
+            45,
+            171
+          ],
+          "url": "https://github.com/nationalarchives/ds-caselaw-judiciary-guidance/blob/59aaf3806edf516d54912d5662abbf13a0539177/content/ncn.html#L45-L171"
+        },
+        {
+          "path": "content/ncn.html",
+          "lines": [
+            188,
+            196
+          ],
+          "url": "https://github.com/nationalarchives/ds-caselaw-judiciary-guidance/blob/59aaf3806edf516d54912d5662abbf13a0539177/content/ncn.html#L188-L196"
+        },
+        {
+          "path": "content/redactions.html",
+          "lines": [
+            7,
+            16
+          ],
+          "url": "https://github.com/nationalarchives/ds-caselaw-judiciary-guidance/blob/59aaf3806edf516d54912d5662abbf13a0539177/content/redactions.html#L7-L16"
+        },
+        {
+          "path": "content/redactions.html",
+          "lines": [
+            27,
+            42
+          ],
+          "url": "https://github.com/nationalarchives/ds-caselaw-judiciary-guidance/blob/59aaf3806edf516d54912d5662abbf13a0539177/content/redactions.html#L27-L42"
+        }
+      ]
+    },
+    {
+      "repository": "brazanation/go-documents",
+      "accessible": true,
+      "default_branch": "master",
+      "head": "4b8a986bc944042abb3e7d732a1363dbae7f16e8",
+      "tree": "363009476944ce3c4e08064e640032332d1e8a2b",
+      "commit_url": "https://github.com/brazanation/go-documents/commit/4b8a986bc944042abb3e7d732a1363dbae7f16e8",
+      "licence_label": "MIT",
+      "licence_inspection_status": "inspected project licence",
+      "licence_details": {
+        "identifier": "MIT",
+        "source": "LICENSE",
+        "handling": "Licence names Antonio Spinelli, copyright 2018. Retain copyright/licence notice if substantial code is copied; Atlas needs neither a Go dependency nor Brazilian ID algorithms.",
+        "url": "https://github.com/brazanation/go-documents/blob/4b8a986bc944042abb3e7d732a1363dbae7f16e8/LICENSE"
+      },
+      "implemented_at_reviewed_head": "Typed Brazilian identifier formatting and check-digit validation with example tests.",
+      "bounded_findings": "NewDocument strips non-digits and slices before validation; one- or two-digit CPF input has an unsafe static path. No code was run and empty-input panic is not asserted.",
+      "decision": {
+        "adopt_independently": "Raw/canonical separation, type-specific validation and boundary tests.",
+        "defer": "Any new identifier profile pending a documented specification.",
+        "reject": "Digit-only normalisation for legal citations or checksum-as-authentication claims."
+      },
+      "test_and_maintenance_evidence": "Default master commit 2024-08-19. Repository is not marked archived. Exact-head check-runs returned zero; this is not evidence that the configured suite passes or fails.",
+      "findings_section": "2026-11-15-repository-comparison.md#r3",
+      "source_group": "primary",
+      "sources": [
+        {
+          "path": "internal/document.go",
+          "lines": [
+            15,
+            49
+          ],
+          "url": "https://github.com/brazanation/go-documents/blob/4b8a986bc944042abb3e7d732a1363dbae7f16e8/internal/document.go#L15-L49",
+          "anchor": "NewDocument"
+        },
+        {
+          "path": "cpf.go",
+          "lines": [
+            12,
+            43
+          ],
+          "url": "https://github.com/brazanation/go-documents/blob/4b8a986bc944042abb3e7d732a1363dbae7f16e8/cpf.go#L12-L43",
+          "anchor": "NewCpf / CalculateDigit"
+        },
+        {
+          "path": "internal/document.go",
+          "lines": [
+            47,
+            49
+          ],
+          "url": "https://github.com/brazanation/go-documents/blob/4b8a986bc944042abb3e7d732a1363dbae7f16e8/internal/document.go#L47-L49",
+          "anchor": "NewDocument"
+        },
+        {
+          "path": "internal/document.go",
+          "lines": [
+            74,
+            107
+          ],
+          "url": "https://github.com/brazanation/go-documents/blob/4b8a986bc944042abb3e7d732a1363dbae7f16e8/internal/document.go#L74-L107",
+          "anchor": "extractCheckerDigit / extractBaseNumber / Assert / isValid"
+        },
+        {
+          "path": "cpf_test.go",
+          "lines": [
+            20,
+            35
+          ],
+          "url": "https://github.com/brazanation/go-documents/blob/4b8a986bc944042abb3e7d732a1363dbae7f16e8/cpf_test.go#L20-L35",
+          "anchor": "CPF invalid and empty tests"
+        },
+        {
+          "path": "cpf_test.go",
+          "lines": [
+            9,
+            35
+          ],
+          "url": "https://github.com/brazanation/go-documents/blob/4b8a986bc944042abb3e7d732a1363dbae7f16e8/cpf_test.go#L9-L35",
+          "anchor": "CPF tests"
+        },
+        {
+          "path": ".github/workflows/actions.yml",
+          "lines": [
+            15,
+            26
+          ],
+          "url": "https://github.com/brazanation/go-documents/blob/4b8a986bc944042abb3e7d732a1363dbae7f16e8/.github/workflows/actions.yml#L15-L26"
+        }
+      ]
+    },
+    {
+      "repository": "adamcohen3/fines-and-fees-calculator",
+      "accessible": true,
+      "default_branch": "main",
+      "head": "fddd1b6d97131fb79650f9773d9fb7294cc551a3",
+      "tree": "b731acf873fbc5d7c916f2266c54ac23c6f86ab8",
+      "commit_url": "https://github.com/adamcohen3/fines-and-fees-calculator/commit/fddd1b6d97131fb79650f9773d9fb7294cc551a3",
+      "licence_label": "GPL-3.0",
+      "licence_inspection_status": "inspected project licence",
+      "licence_details": {
+        "identifier": "GPL-3.0",
+        "source": "LICENSE",
+        "handling": "Do not copy or adapt source into Atlas without a compatibility decision. Independently implement attributed high-level workflow ideas; do not copy RDS data, legal formulae, UI text or assets.",
+        "url": "https://github.com/adamcohen3/fines-and-fees-calculator/blob/fddd1b6d97131fb79650f9773d9fb7294cc551a3/LICENSE"
+      },
+      "implemented_at_reviewed_head": "Hawaii-specific Shiny estimate workflow with dated charge versions, validation and review/print.",
+      "bounded_findings": "Underlying RDS legal rules and currentness were not validated. Summary and session paths write data to Dropbox; this is an observed flow, not an established breach.",
+      "decision": {
+        "adopt_independently": "Effective-date selection, stable version IDs, provisional output and correction steps.",
+        "defer": "Legal rules pending independently verified jurisdiction-specific evidence.",
+        "reject": "GPL source transplantation without compatibility review, Hawaii formulae and inherited telemetry."
+      },
+      "test_and_maintenance_evidence": "Default main commit 2024-10-04. No automated-test directory or CI workflow found in full tree; exact-head check-runs empty. renv.lock records R 4.3.2 and 127 packages, but no fresh reproducible install was performed.",
+      "findings_section": "2026-11-15-repository-comparison.md#r4",
+      "source_group": "primary",
+      "sources": [
+        {
+          "path": "app.R",
+          "lines": [
+            1203,
+            1222
+          ],
+          "url": "https://github.com/adamcohen3/fines-and-fees-calculator/blob/fddd1b6d97131fb79650f9773d9fb7294cc551a3/app.R#L1203-L1222",
+          "anchor": "chargeList"
+        },
+        {
+          "path": "app.R",
+          "lines": [
+            284,
+            286
+          ],
+          "url": "https://github.com/adamcohen3/fines-and-fees-calculator/blob/fddd1b6d97131fb79650f9773d9fb7294cc551a3/app.R#L284-L286"
+        },
+        {
+          "path": "app.R",
+          "lines": [
+            1154,
+            1198
+          ],
+          "url": "https://github.com/adamcohen3/fines-and-fees-calculator/blob/fddd1b6d97131fb79650f9773d9fb7294cc551a3/app.R#L1154-L1198",
+          "anchor": "InputValidator / switch_page"
+        },
+        {
+          "path": "app.R",
+          "lines": [
+            1073,
+            1078
+          ],
+          "url": "https://github.com/adamcohen3/fines-and-fees-calculator/blob/fddd1b6d97131fb79650f9773d9fb7294cc551a3/app.R#L1073-L1078"
+        },
+        {
+          "path": "app.R",
+          "lines": [
+            1438,
+            1456
+          ],
+          "url": "https://github.com/adamcohen3/fines-and-fees-calculator/blob/fddd1b6d97131fb79650f9773d9fb7294cc551a3/app.R#L1438-L1456"
+        },
+        {
+          "path": "app.R",
+          "lines": [
+            43,
+            49
+          ],
+          "url": "https://github.com/adamcohen3/fines-and-fees-calculator/blob/fddd1b6d97131fb79650f9773d9fb7294cc551a3/app.R#L43-L49"
+        },
+        {
+          "path": "app.R",
+          "lines": [
+            63,
+            105
+          ],
+          "url": "https://github.com/adamcohen3/fines-and-fees-calculator/blob/fddd1b6d97131fb79650f9773d9fb7294cc551a3/app.R#L63-L105",
+          "anchor": "save_data_dropbox / save_shinylogs_dropbox"
+        },
+        {
+          "path": "app.R",
+          "lines": [
+            1122,
+            1150
+          ],
+          "url": "https://github.com/adamcohen3/fines-and-fees-calculator/blob/fddd1b6d97131fb79650f9773d9fb7294cc551a3/app.R#L1122-L1150",
+          "anchor": "observeEvent / track_usage"
+        }
+      ]
+    },
+    {
+      "repository": "viru0909-dev/nyay-setu-working",
+      "accessible": true,
+      "default_branch": "main",
+      "head": "c84da82d67891166bf51e5d17c088217bd8b873a",
+      "tree": "a64312003913b97259840a2b7b44462b308776e2",
+      "commit_url": "https://github.com/viru0909-dev/nyay-setu-working/commit/c84da82d67891166bf51e5d17c088217bd8b873a",
+      "licence_label": "MIT text; API NOASSERTION",
+      "licence_inspection_status": "LICENSE grant read; metadata disagreement retained",
+      "licence_details": {
+        "observed": "LICENSE lines 1–21 contain an MIT grant and 2026 Nyay Setu Contributors notice. GitHub metadata reports Other/NOASSERTION. The file also appends a guide; it was treated as untrusted repository content and not executed.",
+        "reuse": "The observed MIT text requires retaining its notice for covered copies/substantial portions. This does not establish rights to all third-party data/assets. Atlas should adopt concepts independently; no source copying is necessary.",
+        "evidence": [
+          "n-license"
+        ]
+      },
+      "implemented_at_reviewed_head": "Authenticated role routes, draft confirmation, state events, document hashes, a hash-chain audit and several AI/RAG paths.",
+      "bounded_findings": "Draft create/list target IDs lack the ownership binding used by confirmation; binary bodies pass through text conversion. Audit prefix validation cannot detect removal of the final row without an external tail/count. Provenance differs across AI routes.",
+      "decision": {
+        "adopt_independently": "Draft/review separation and explicit evidence and actor states.",
+        "defer": "Multi-user deployment and AI answers pending object-authorisation and provenance evaluation.",
+        "reject": "Hash-as-admissibility claims, binary text sanitisation, unconstrained storage paths and global-role substitutes for case assignment."
+      },
+      "test_and_maintenance_evidence": {
+        "observed": "The complete tree contains Java security/service/controller tests, frontend tests and Python orchestration tests. Sampled RBAC tests check litigant denial to judge/admin routes. Audit tests check a broken middle link, an intact chain and genesis append. The sampled document-controller test checks certificate-generation failure; numeric citation tests check section ranges.",
+        "limits": "Tests were not executed. The sampled tests do not demonstrate draft create/list owner isolation, multipart byte preservation, storage containment, audit tail-truncation detection, distributed audit ordering, or proposition-grounded citation accuracy. Other test suites were not exhaustively read.",
+        "evidence": [
+          "n-rbac-tests",
+          "n-audit-tests",
+          "n-doc-tests",
+          "n-citation-tests"
+        ]
+      },
+      "findings_section": "2026-11-15-repository-comparison.md#r5",
+      "source_group": "intake",
+      "sources": [
+        {
+          "path": "README.md",
+          "lines": [
+            63,
+            84
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/README.md#L63-L84",
+          "anchor": "n-readme",
+          "git_blob": "60228c6b770503699ff04f89098d541c5a52e742"
+        },
+        {
+          "path": "LICENSE",
+          "lines": [
+            1,
+            21
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/LICENSE#L1-L21",
+          "anchor": "n-license",
+          "git_blob": "4fb3ce0245498a51aa27d5e6a452adb83a0ba175"
+        },
+        {
+          "path": "backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/config/SecurityConfig.java",
+          "lines": [
+            179,
+            302
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/config/SecurityConfig.java#L179-L302",
+          "anchor": "n-security",
+          "git_blob": "650fc029d751e647bfb0b14b2709077c02201af1"
+        },
+        {
+          "path": "backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/filter/JwtAuthFilter.java",
+          "lines": [
+            40,
+            88
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/filter/JwtAuthFilter.java#L40-L88",
+          "anchor": "n-jwt",
+          "git_blob": "c639e82336625f9e195c23e9bfffc287f088abae"
+        },
+        {
+          "path": "backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/controller/CaseDraftController.java",
+          "lines": [
+            36,
+            150
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/controller/CaseDraftController.java#L36-L150",
+          "anchor": "n-draft",
+          "git_blob": "d6ea16930acae8527794dd5137d62e23a0b622f0"
+        },
+        {
+          "path": "backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/repository/CaseDraftRepository.java",
+          "lines": [
+            14,
+            31
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/repository/CaseDraftRepository.java#L14-L31",
+          "anchor": "n-draft-repo",
+          "git_blob": "803d43762bda44d37810bd8e37f6bb808f60deb8"
+        },
+        {
+          "path": "backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/entity/CaseDraft.java",
+          "lines": [
+            14,
+            70
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/entity/CaseDraft.java#L14-L70",
+          "anchor": "n-draft-entity",
+          "git_blob": "87bffcb964ea4aa4bb9c52e68fd17afff8f46605"
+        },
+        {
+          "path": "backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/filter/XssSanitizationFilter.java",
+          "lines": [
+            25,
+            85
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/filter/XssSanitizationFilter.java#L25-L85",
+          "anchor": "n-xss",
+          "git_blob": "4aaa1a51a102f7a0f03054c11e8bfd3830dce62e"
+        },
+        {
+          "path": "backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/service/CaseAccessService.java",
+          "lines": [
+            21,
+            51
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/service/CaseAccessService.java#L21-L51",
+          "anchor": "n-case-access",
+          "git_blob": "45788a1bbff115de5b49aeea8f04bb03206ad745"
+        },
+        {
+          "path": "backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/controller/DocumentManagementController.java",
+          "lines": [
+            41,
+            83
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/controller/DocumentManagementController.java#L41-L83",
+          "anchor": "n-doc-controller",
+          "git_blob": "b36a5552cca87c6aff53376a4e5cd8fb3bbbb3c4"
+        },
+        {
+          "path": "backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/service/DocumentManagementService.java",
+          "lines": [
+            36,
+            219
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/service/DocumentManagementService.java#L36-L219",
+          "anchor": "n-doc-service",
+          "git_blob": "528604a709345e7216b6b5b82aa2db6a701d2f90"
+        },
+        {
+          "path": "backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/service/FileStorageService.java",
+          "lines": [
+            31,
+            86
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/service/FileStorageService.java#L31-L86",
+          "anchor": "n-storage",
+          "git_blob": "ec11ec94a0b0b83b5f8fe57fd0435cad94940470"
+        },
+        {
+          "path": "backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/service/AuditChainService.java",
+          "lines": [
+            17,
+            105
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/service/AuditChainService.java#L17-L105",
+          "anchor": "n-audit",
+          "git_blob": "31978a053b7b83fc0f9b49d91e5dc2abdcd0d961"
+        },
+        {
+          "path": "backend/nyaysetu-backend/src/test/java/com/nyaysetu/backend/service/AuditChainServiceTest.java",
+          "lines": [
+            30,
+            129
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/backend/nyaysetu-backend/src/test/java/com/nyaysetu/backend/service/AuditChainServiceTest.java#L30-L129",
+          "anchor": "n-audit-tests",
+          "git_blob": "f1e1d56b251464200c1b6a77fe76279d793168ce"
+        },
+        {
+          "path": "backend/nyaysetu-backend/src/test/java/com/nyaysetu/backend/controller/RbacSecurityTest.java",
+          "lines": [
+            34,
+            51
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/backend/nyaysetu-backend/src/test/java/com/nyaysetu/backend/controller/RbacSecurityTest.java#L34-L51",
+          "anchor": "n-rbac-tests",
+          "git_blob": "0d5fc678895433a2ae660e118e0f79a44437e0ba"
+        },
+        {
+          "path": "backend/nyaysetu-backend/src/test/java/com/nyaysetu/backend/controller/DocumentManagementControllerTest.java",
+          "lines": [
+            65,
+            88
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/backend/nyaysetu-backend/src/test/java/com/nyaysetu/backend/controller/DocumentManagementControllerTest.java#L65-L88",
+          "anchor": "n-doc-tests",
+          "git_blob": "1aa2ea925158baa73e3acd6c8d96a4ee89ea0d01"
+        },
+        {
+          "path": "backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/service/AiService.java",
+          "lines": [
+            34,
+            119
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/service/AiService.java#L34-L119",
+          "anchor": "n-ai",
+          "git_blob": "10210bfde4ec54a4247f54596da38f045c11f810"
+        },
+        {
+          "path": "backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/service/RagService.java",
+          "lines": [
+            32,
+            95
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/service/RagService.java#L32-L95",
+          "anchor": "n-rag",
+          "git_blob": "0b7b5fc1410457b0ac60ff6a6b9801d60f90c76f"
+        },
+        {
+          "path": "lawgpt-service/routers/context.py",
+          "lines": [
+            182,
+            251
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/lawgpt-service/routers/context.py#L182-L251",
+          "anchor": "n-lawgpt",
+          "git_blob": "8150b5d5abd91c9a675309acc2fb0192d38800d3"
+        },
+        {
+          "path": "nlp-orchestrator/validators/citation_validator.py",
+          "lines": [
+            33,
+            96
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/nlp-orchestrator/validators/citation_validator.py#L33-L96",
+          "anchor": "n-citations",
+          "git_blob": "569f5520d11cead39f8b883f0347ceb84be88dec"
+        },
+        {
+          "path": "nlp-orchestrator/tests/test_citation_validator.py",
+          "lines": [
+            7,
+            29
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/nlp-orchestrator/tests/test_citation_validator.py#L7-L29",
+          "anchor": "n-citation-tests",
+          "git_blob": "f4d48a059986078ad982c075a179dcc4bdc723b5"
+        },
+        {
+          "path": "backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/service/CaseStateTransitionService.java",
+          "lines": [
+            46,
+            135
+          ],
+          "url": "https://github.com/viru0909-dev/nyay-setu-working/blob/c84da82d67891166bf51e5d17c088217bd8b873a/backend/nyaysetu-backend/src/main/java/com/nyaysetu/backend/service/CaseStateTransitionService.java#L46-L135",
+          "anchor": "n-state",
+          "git_blob": "b017b1e79d29420ca082083638a13090a3904ed7"
+        }
+      ]
+    },
+    {
+      "repository": "rohitroy-github/vite-project-evault",
+      "accessible": true,
+      "default_branch": "main",
+      "head": "d07168a329a7b3b7676fb532aeb9714840329a96",
+      "tree": "967e9d6febcf805108eea7e222f3c55b08f245ec",
+      "commit_url": "https://github.com/rohitroy-github/vite-project-evault/commit/d07168a329a7b3b7676fb532aeb9714840329a96",
+      "licence_label": "Contract MIT header only",
+      "licence_inspection_status": "complete tree lacks project licence; contract header inspected",
+      "licence_details": {
+        "observed": "No root LICENSE/LICENCE file was present in the complete tree and GitHub licence metadata is null. EVault_Main.sol line 1 declares SPDX-License-Identifier: MIT.",
+        "reuse": "Do not assume the frontend or repository as a whole is MIT-licensed from the contract header. Treat it as design-reference material; investigate permission/file scope before copying any implementation.",
+        "evidence": [
+          "e-contract"
+        ]
+      },
+      "implemented_at_reviewed_head": "Solidity participant/case/document records, wallet calls and Pinata upload/readback.",
+      "bounded_findings": "Login methods test UID existence, while update methods lack caller/assignment checks. Public mappings and document locators do not provide confidentiality. Browser upload uses client-available provider credentials.",
+      "decision": {
+        "adopt_independently": "Stable identifiers and exact write/readback receipts as independent offline concepts.",
+        "defer": "Any online storage until permissions, retention and credential boundaries are designed.",
+        "reject": "On-chain private records, UID existence as authentication and timestamp allocation as fairness."
+      },
+      "test_and_maintenance_evidence": {
+        "observed": "Hardhat test file covers registration/readback, case creation, document append/readback, nonexistent-case rejection and login existence checks. Representative update/login tests were read at lines 531–641.",
+        "limits": "Tests were not run. Reviewed named tests and assertions do not demonstrate rejection of unauthorized assigned-role mutations, duplicate-UID replacement, or confidentiality. A successful transaction/readback is not an authorization test.",
+        "evidence": [
+          "e-tests"
+        ]
+      },
+      "findings_section": "2026-11-15-repository-comparison.md#r6",
+      "source_group": "intake",
+      "sources": [
+        {
+          "path": "README.md",
+          "lines": [
+            17,
+            29
+          ],
+          "url": "https://github.com/rohitroy-github/vite-project-evault/blob/d07168a329a7b3b7676fb532aeb9714840329a96/README.md#L17-L29",
+          "anchor": "e-readme",
+          "git_blob": "cd46fe376d179e95f73858b7ec87f44d6d761889"
+        },
+        {
+          "path": "blockchain-hardhat/contracts/EVault_Main.sol",
+          "lines": [
+            1,
+            593
+          ],
+          "url": "https://github.com/rohitroy-github/vite-project-evault/blob/d07168a329a7b3b7676fb532aeb9714840329a96/blockchain-hardhat/contracts/EVault_Main.sol#L1-L593",
+          "anchor": "e-contract",
+          "git_blob": "d0739f255f5cf61305d97841703779e90f61fd67"
+        },
+        {
+          "path": "frontend-vite/src/blockchain-api/loginAsAClient.jsx",
+          "lines": [
+            8,
+            31
+          ],
+          "url": "https://github.com/rohitroy-github/vite-project-evault/blob/d07168a329a7b3b7676fb532aeb9714840329a96/frontend-vite/src/blockchain-api/loginAsAClient.jsx#L8-L31",
+          "anchor": "e-login",
+          "git_blob": "0f5cdbbdecbb8b53720499e8cb80f20488ca3876"
+        },
+        {
+          "path": "frontend-vite/src/blockchain-api/uploadCaseDocument.jsx",
+          "lines": [
+            19,
+            58
+          ],
+          "url": "https://github.com/rohitroy-github/vite-project-evault/blob/d07168a329a7b3b7676fb532aeb9714840329a96/frontend-vite/src/blockchain-api/uploadCaseDocument.jsx#L19-L58",
+          "anchor": "e-upload",
+          "git_blob": "12f75694c4042e15eeba3e22649a2038b6560d0b"
+        },
+        {
+          "path": "frontend-vite/src/blockchain-api/uploadCaseDocumentUsingVerbwire.jsx",
+          "lines": [
+            19,
+            65
+          ],
+          "url": "https://github.com/rohitroy-github/vite-project-evault/blob/d07168a329a7b3b7676fb532aeb9714840329a96/frontend-vite/src/blockchain-api/uploadCaseDocumentUsingVerbwire.jsx#L19-L65",
+          "anchor": "e-alt-upload",
+          "git_blob": "bd3fe4afbd8c4738e489e323d372eeac6dade51e"
+        },
+        {
+          "path": "blockchain-hardhat/test/test-eVaultMain.js",
+          "lines": [
+            531,
+            641
+          ],
+          "url": "https://github.com/rohitroy-github/vite-project-evault/blob/d07168a329a7b3b7676fb532aeb9714840329a96/blockchain-hardhat/test/test-eVaultMain.js#L531-L641",
+          "anchor": "e-tests",
+          "git_blob": "d6e6205148a3fea241e4ada2b48d5781ec6b4c93"
+        }
+      ]
+    },
+    {
+      "repository": "capybara-brain346/atjbot",
+      "accessible": true,
+      "default_branch": "main",
+      "head": "5e538944e498dfb5da8d9bb9a45ba94dac687403",
+      "tree": "3451a1e11757b71e8f4aab2c4717f919588442c8",
+      "commit_url": "https://github.com/capybara-brain346/atjbot/commit/5e538944e498dfb5da8d9bb9a45ba94dac687403",
+      "licence_label": "MIT",
+      "licence_inspection_status": "inspected project licence",
+      "licence_details": {
+        "observed": "MIT LICENSE, copyright 2024 Piyush Choudhari.",
+        "reuse": "Retain required notices if covered code is copied. Do not assume all ingested legal text, PDFs or other third-party material receives a fresh reuse grant from the repository licence. Atlas can adopt the interface concepts independently.",
+        "evidence": [
+          "a-license"
+        ]
+      },
+      "implemented_at_reviewed_head": "React language choices, Flask chat, Google embeddings/Gemini, Chroma and file ingestion.",
+      "bounded_findings": "Answer chunks and displayed links come from separate retrievals; chunk metadata is discarded. Existing chunk IDs are not updated on changed content. Exception and success return types differ.",
+      "decision": {
+        "adopt_independently": "Separated ingestion and questions, typed unavailable states and explicit language fields.",
+        "defer": "Multilingual/source fidelity claims pending evaluation.",
+        "reject": "Separate link search as proposition support, unversioned corpora and prompt-only reliability claims."
+      },
+      "test_and_maintenance_evidence": {
+        "observed": "The complete 196-entry tree contains testing_guidelines.txt, a manual checklist covering functional, conversation, security and performance testing. No automated test/spec file was found by the complete-tree filename inventory. The checklist is not an execution result.",
+        "limits": "No tests, API calls or LLM evaluations were run. This inventory does not exclude assertions embedded in files with other names. There is no evidence here of passing provenance, stale-index, adversarial-input, multilingual or source-currency evaluations.",
+        "evidence": [
+          "a-testing-guide"
+        ]
+      },
+      "findings_section": "2026-11-15-repository-comparison.md#r7",
+      "source_group": "intake",
+      "sources": [
+        {
+          "path": "README.md",
+          "lines": [
+            5,
+            24
+          ],
+          "url": "https://github.com/capybara-brain346/atjbot/blob/5e538944e498dfb5da8d9bb9a45ba94dac687403/README.md#L5-L24",
+          "anchor": "a-readme",
+          "git_blob": "add41ffb274527007d342e4f52a7edff9f8dee5b"
+        },
+        {
+          "path": "LICENSE",
+          "lines": [
+            1,
+            21
+          ],
+          "url": "https://github.com/capybara-brain346/atjbot/blob/5e538944e498dfb5da8d9bb9a45ba94dac687403/LICENSE#L1-L21",
+          "anchor": "a-license",
+          "git_blob": "2d066e07a1ab8f1bcf6bd08a199ced3a65c3b38d"
+        },
+        {
+          "path": "backend/app.py",
+          "lines": [
+            14,
+            55
+          ],
+          "url": "https://github.com/capybara-brain346/atjbot/blob/5e538944e498dfb5da8d9bb9a45ba94dac687403/backend/app.py#L14-L55",
+          "anchor": "a-endpoint",
+          "git_blob": "189348aec98e2486185534341c5ea8e02289ffb9"
+        },
+        {
+          "path": "backend/utils.py",
+          "lines": [
+            19,
+            117
+          ],
+          "url": "https://github.com/capybara-brain346/atjbot/blob/5e538944e498dfb5da8d9bb9a45ba94dac687403/backend/utils.py#L19-L117",
+          "anchor": "a-rag",
+          "git_blob": "68174a3b3d44d478f7637b364f5a4f4304514adb"
+        },
+        {
+          "path": "bot/pipeline/run_rag_pipelines.py",
+          "lines": [
+            1,
+            123
+          ],
+          "url": "https://github.com/capybara-brain346/atjbot/blob/5e538944e498dfb5da8d9bb9a45ba94dac687403/bot/pipeline/run_rag_pipelines.py#L1-L123",
+          "anchor": "a-ingest",
+          "git_blob": "9b588521b5ff6117321807dcc4a369367e80e9a9"
+        },
+        {
+          "path": "frontend/react+vite/src/ChatApp.jsx",
+          "lines": [
+            15,
+            87
+          ],
+          "url": "https://github.com/capybara-brain346/atjbot/blob/5e538944e498dfb5da8d9bb9a45ba94dac687403/frontend/react+vite/src/ChatApp.jsx#L15-L87",
+          "anchor": "a-ui",
+          "git_blob": "ed2e99d8a1350dab0a8f4225aed8749ca8b9e15e"
+        },
+        {
+          "path": "bot/pipeline/get_unstructured.py",
+          "lines": [
+            10,
+            40
+          ],
+          "url": "https://github.com/capybara-brain346/atjbot/blob/5e538944e498dfb5da8d9bb9a45ba94dac687403/bot/pipeline/get_unstructured.py#L10-L40",
+          "anchor": "a-source-fetch",
+          "git_blob": "d4a619b34938061a8a08d7c9a51a0e1d1860449b"
+        },
+        {
+          "path": "bot/data/legal_questions/criminal_law/expungement.txt",
+          "lines": [
+            1,
+            57
+          ],
+          "url": "https://github.com/capybara-brain346/atjbot/blob/5e538944e498dfb5da8d9bb9a45ba94dac687403/bot/data/legal_questions/criminal_law/expungement.txt#L1-L57",
+          "anchor": "a-sample-corpus",
+          "git_blob": "bf9e58224fa4bfcc730b64f1b86ad943630aa9ec"
+        },
+        {
+          "path": "testing_guidelines.txt",
+          "lines": [
+            1,
+            36
+          ],
+          "url": "https://github.com/capybara-brain346/atjbot/blob/5e538944e498dfb5da8d9bb9a45ba94dac687403/testing_guidelines.txt#L1-L36",
+          "anchor": "a-testing-guide",
+          "git_blob": "5529d702999affa44797d69721664bc930c27249"
+        }
+      ]
+    },
+    {
+      "repository": "animesh-s/Judiciary-Information-System",
+      "accessible": true,
+      "default_branch": "master",
+      "head": "927531d6a01e8457ff97fb439b9bf0874ac5fc89",
+      "tree": "0a26e98333502ae1601e5415cdf06c91c33002df",
+      "commit_url": "https://github.com/animesh-s/Judiciary-Information-System/commit/927531d6a01e8457ff97fb439b9bf0874ac5fc89",
+      "licence_label": "No explicit grant found",
+      "licence_inspection_status": "complete-tree and README inspection",
+      "licence_details": "No licence file or licence grant found in the inspected complete tree and README. This task must independently implement general ideas rather than copy source.",
+      "implemented_at_reviewed_head": "Java Swing role screens and database operations for cases, hearing dates and summaries.",
+      "bounded_findings": "GUI input is concatenated into raw SQL. Success messages follow caught failures; updates overwrite fields without accompanying actor/time/reason events. Race consequences are inferred, not tested.",
+      "decision": {
+        "adopt_independently": "Case-event vocabulary and explicit failure receipts.",
+        "defer": "Database workflows until transactional, authorised and independently tested.",
+        "reject": "Source copying, raw SQL concatenation, literal credentials and imported criminal-case assumptions."
+      },
+      "test_and_maintenance_evidence": "13 files; Test Suite Design.pdf exists but was not read or treated as executable tests. No executable test source, build manifest, database DDL or workflow appears in the complete tree. Head date is 2016-10-30, which is a maintenance signal, not proof of abandonment or vulnerability.",
+      "findings_section": "2026-11-15-repository-comparison.md#r8",
+      "source_group": "caseflow",
+      "sources": [
+        {
+          "path": "src/Users.java",
+          "lines": [
+            184,
+            221
+          ],
+          "url": "https://github.com/animesh-s/Judiciary-Information-System/blob/927531d6a01e8457ff97fb439b9bf0874ac5fc89/src/Users.java#L184-L221",
+          "anchor": "Users.DoneActionPerformed",
+          "git_blob": "a37dc33718dff3513511fd2983667f6a297830f9"
+        },
+        {
+          "path": "src/Cases.java",
+          "lines": [
+            307,
+            340
+          ],
+          "url": "https://github.com/animesh-s/Judiciary-Information-System/blob/927531d6a01e8457ff97fb439b9bf0874ac5fc89/src/Cases.java#L307-L340",
+          "anchor": "Cases.actionPerformed",
+          "git_blob": "3e89855aedf9fa8c97575f8b19ca58f8c9377bab"
+        },
+        {
+          "path": "src/Query.java",
+          "lines": [
+            16,
+            52
+          ],
+          "url": "https://github.com/animesh-s/Judiciary-Information-System/blob/927531d6a01e8457ff97fb439b9bf0874ac5fc89/src/Query.java#L16-L52",
+          "anchor": "Query.execute",
+          "git_blob": "351752d2aa0148618ed2974968abe9fa14f21768"
+        },
+        {
+          "path": "src/Cases.java",
+          "lines": [
+            321,
+            341
+          ],
+          "url": "https://github.com/animesh-s/Judiciary-Information-System/blob/927531d6a01e8457ff97fb439b9bf0874ac5fc89/src/Cases.java#L321-L341",
+          "anchor": "Cases.actionPerformed",
+          "git_blob": "3e89855aedf9fa8c97575f8b19ca58f8c9377bab"
+        },
+        {
+          "path": "src/Registrar.java",
+          "lines": [
+            394,
+            419
+          ],
+          "url": "https://github.com/animesh-s/Judiciary-Information-System/blob/927531d6a01e8457ff97fb439b9bf0874ac5fc89/src/Registrar.java#L394-L419",
+          "anchor": "Registrar.actionPerformed: Update",
+          "git_blob": "6861e769b0ced5bed829a5dfc95e8cdb634c3b24"
+        },
+        {
+          "path": "src/Query.java",
+          "lines": [
+            39,
+            52
+          ],
+          "url": "https://github.com/animesh-s/Judiciary-Information-System/blob/927531d6a01e8457ff97fb439b9bf0874ac5fc89/src/Query.java#L39-L52",
+          "anchor": "Query.execute",
+          "git_blob": "351752d2aa0148618ed2974968abe9fa14f21768"
+        },
+        {
+          "path": "src/Registrar.java",
+          "lines": [
+            254,
+            292
+          ],
+          "url": "https://github.com/animesh-s/Judiciary-Information-System/blob/927531d6a01e8457ff97fb439b9bf0874ac5fc89/src/Registrar.java#L254-L292",
+          "anchor": "Registrar.actionPerformed: RegisterNewCase",
+          "git_blob": "6861e769b0ced5bed829a5dfc95e8cdb634c3b24"
+        },
+        {
+          "path": "src/Query.java",
+          "lines": [
+            23,
+            40
+          ],
+          "url": "https://github.com/animesh-s/Judiciary-Information-System/blob/927531d6a01e8457ff97fb439b9bf0874ac5fc89/src/Query.java#L23-L40",
+          "anchor": "Query.execute",
+          "git_blob": "351752d2aa0148618ed2974968abe9fa14f21768"
+        },
+        {
+          "path": "src/Registrar.java",
+          "lines": [
+            713,
+            736
+          ],
+          "url": "https://github.com/animesh-s/Judiciary-Information-System/blob/927531d6a01e8457ff97fb439b9bf0874ac5fc89/src/Registrar.java#L713-L736",
+          "anchor": "Registrar.actionPerformed: AssignDate",
+          "git_blob": "6861e769b0ced5bed829a5dfc95e8cdb634c3b24"
+        },
+        {
+          "path": "src/Registrar.java",
+          "lines": [
+            739,
+            781
+          ],
+          "url": "https://github.com/animesh-s/Judiciary-Information-System/blob/927531d6a01e8457ff97fb439b9bf0874ac5fc89/src/Registrar.java#L739-L781",
+          "anchor": "Registrar.actionPerformed: CloseCase",
+          "git_blob": "6861e769b0ced5bed829a5dfc95e8cdb634c3b24"
+        },
+        {
+          "path": "README.md",
+          "lines": [
+            3,
+            17
+          ],
+          "url": "https://github.com/animesh-s/Judiciary-Information-System/blob/927531d6a01e8457ff97fb439b9bf0874ac5fc89/README.md#L3-L17",
+          "anchor": "Problem Statement and Queries",
+          "git_blob": "07402281d3923111e3aa09cde5c704d9802911d4"
+        }
+      ]
+    },
+    {
+      "repository": "egeakin/National-Judiciary-System",
+      "accessible": true,
+      "default_branch": "master",
+      "head": "c8a01310823ad73adb840df01abd9c9f37704157",
+      "tree": "6120a5bc217706335df5195529c19290c030cb0a",
+      "commit_url": "https://github.com/egeakin/National-Judiciary-System/commit/c8a01310823ad73adb840df01abd9c9f37704157",
+      "licence_label": "No explicit grant found",
+      "licence_inspection_status": "complete-tree and README inspection",
+      "licence_details": "No licence file or licence grant found in the inspected complete tree and README. Independently implement general schema-validation ideas; do not transplant Java, assets or seeded records.",
+      "implemented_at_reviewed_head": "Course-project schema/bootstrap with composite hearing and statement relationships.",
+      "bounded_findings": "The supplied Java unconditionally drops domain tables, recreates them and prints password fields. The linked PHP application is absent, so its permissions cannot be assessed.",
+      "decision": {
+        "adopt_independently": "Explicit case/hearing/document referential checks.",
+        "defer": "Same-day hearing identity assumptions pending a scoped profile.",
+        "reject": "Destructive bootstrap, personal-data fixtures, credential literals and schema-as-access-control claims."
+      },
+      "test_and_maintenance_evidence": "14 files; one Java source, bundled mysql-connector-java-8.0.15 ZIP, compiled Main.class, PDFs and screenshots. No executable test source or CI workflow appears in the complete tree. Head date is 2019-06-14. This does not establish that external testing never occurred.",
+      "findings_section": "2026-11-15-repository-comparison.md#r9",
+      "source_group": "caseflow",
+      "sources": [
+        {
+          "path": "Java/src/Main.java",
+          "lines": [
+            143,
+            158
+          ],
+          "url": "https://github.com/egeakin/National-Judiciary-System/blob/c8a01310823ad73adb840df01abd9c9f37704157/Java/src/Main.java#L143-L158",
+          "anchor": "Main.main: trial and has_statement DDL",
+          "git_blob": "149c9b3a9d7e0380c48a2f4bc90ea358f590491f"
+        },
+        {
+          "path": "Java/src/Main.java",
+          "lines": [
+            6,
+            19
+          ],
+          "url": "https://github.com/egeakin/National-Judiciary-System/blob/c8a01310823ad73adb840df01abd9c9f37704157/Java/src/Main.java#L6-L19",
+          "anchor": "Main.main: connection and destructive bootstrap",
+          "git_blob": "149c9b3a9d7e0380c48a2f4bc90ea358f590491f"
+        },
+        {
+          "path": "Java/src/Main.java",
+          "lines": [
+            629,
+            631
+          ],
+          "url": "https://github.com/egeakin/National-Judiciary-System/blob/c8a01310823ad73adb840df01abd9c9f37704157/Java/src/Main.java#L629-L631",
+          "anchor": "Main.main: exception handler",
+          "git_blob": "149c9b3a9d7e0380c48a2f4bc90ea358f590491f"
+        },
+        {
+          "path": "Java/src/Main.java",
+          "lines": [
+            22,
+            36
+          ],
+          "url": "https://github.com/egeakin/National-Judiciary-System/blob/c8a01310823ad73adb840df01abd9c9f37704157/Java/src/Main.java#L22-L36",
+          "anchor": "Main.main: citizen DDL",
+          "git_blob": "149c9b3a9d7e0380c48a2f4bc90ea358f590491f"
+        },
+        {
+          "path": "Java/src/Main.java",
+          "lines": [
+            379,
+            401
+          ],
+          "url": "https://github.com/egeakin/National-Judiciary-System/blob/c8a01310823ad73adb840df01abd9c9f37704157/Java/src/Main.java#L379-L401",
+          "anchor": "Main.main: citizen print loop",
+          "git_blob": "149c9b3a9d7e0380c48a2f4bc90ea358f590491f"
+        },
+        {
+          "path": "Java/src/Main.java",
+          "lines": [
+            59,
+            64
+          ],
+          "url": "https://github.com/egeakin/National-Judiciary-System/blob/c8a01310823ad73adb840df01abd9c9f37704157/Java/src/Main.java#L59-L64",
+          "anchor": "Main.main: lawsuit DDL",
+          "git_blob": "149c9b3a9d7e0380c48a2f4bc90ea358f590491f"
+        },
+        {
+          "path": "Java/src/Main.java",
+          "lines": [
+            93,
+            98
+          ],
+          "url": "https://github.com/egeakin/National-Judiciary-System/blob/c8a01310823ad73adb840df01abd9c9f37704157/Java/src/Main.java#L93-L98",
+          "anchor": "Main.main: has_lawyer DDL",
+          "git_blob": "149c9b3a9d7e0380c48a2f4bc90ea358f590491f"
+        },
+        {
+          "path": "README.md",
+          "lines": [
+            21,
+            29
+          ],
+          "url": "https://github.com/egeakin/National-Judiciary-System/blob/c8a01310823ad73adb840df01abd9c9f37704157/README.md#L21-L29",
+          "anchor": "Project scope",
+          "git_blob": "f2569632fcddf133879726ab6a383643623339a1"
+        }
+      ]
+    },
+    {
+      "repository": "gaurav-karki/ngm",
+      "accessible": true,
+      "default_branch": "main",
+      "head": "174088b33191e0062b9385603571bc3218de2ee1",
+      "tree": "7eeeffd6e7fc1d8d17cec524216c12fdee7f5953",
+      "commit_url": "https://github.com/gaurav-karki/ngm/commit/174088b33191e0062b9385603571bc3218de2ee1",
+      "licence_label": "MIT",
+      "licence_inspection_status": "inspected project licence; court data rights not inferred",
+      "licence_details": "MIT licence, Copyright (c) 2026 NewNepal.org, LICENSE lines 1–21. Preserve its copyright and permission notice for copied substantial software portions. The software licence does not establish rights to redistribute court documents or personal data.",
+      "implemented_at_reviewed_head": "Nepal court-data scraping/enrichment with court-scoped case IDs and BS/AD date fields.",
+      "bounded_findings": "Missing tables or skipped malformed rows can still receive completion markers. The pending-or-NULL selector uses SQL IN with NULL; failed rows are outside that selector. Re-enrichment replaces fields/entities rather than retaining versions.",
+      "decision": {
+        "adopt_independently": "Namespaced IDs, original calendar provenance and complete/partial/failed import states.",
+        "defer": "Permitted collection and enrichment until versioning and completeness tests exist.",
+        "reject": "Scraping without rights review, completion markers as completeness proof and transferred Nepal-specific rules."
+      },
+      "test_and_maintenance_evidence": "37 files; poetry.lock and Python ^3.12 project metadata exist. Five court/scraper workflows are operational collection jobs, not tests. No test files appear in the complete tree. Inspected district workflow uses Python 3.12, Poetry latest and a proxy action at mutable @master; these limit reproducible runner identity. No hosted run was assessed. Head date is 2026-01-27.",
+      "findings_section": "2026-11-15-repository-comparison.md#r10",
+      "source_group": "caseflow",
+      "sources": [
+        {
+          "path": "ngm/database/models.py",
+          "lines": [
+            85,
+            108
+          ],
+          "url": "https://github.com/gaurav-karki/ngm/blob/174088b33191e0062b9385603571bc3218de2ee1/ngm/database/models.py#L85-L108",
+          "anchor": "CourtCase",
+          "git_blob": "ef777d9d6b5683f75489d84033069de84ab96ba6"
+        },
+        {
+          "path": "ngm/utils/db_helpers.py",
+          "lines": [
+            11,
+            25
+          ],
+          "url": "https://github.com/gaurav-karki/ngm/blob/174088b33191e0062b9385603571bc3218de2ee1/ngm/utils/db_helpers.py#L11-L25",
+          "anchor": "convert_bs_to_ad",
+          "git_blob": "4c1c24f62005e933ecb7d49e6233061769febb85"
+        },
+        {
+          "path": "ngm/utils/db_helpers.py",
+          "lines": [
+            47,
+            57
+          ],
+          "url": "https://github.com/gaurav-karki/ngm/blob/174088b33191e0062b9385603571bc3218de2ee1/ngm/utils/db_helpers.py#L47-L57",
+          "anchor": "CaseCache",
+          "git_blob": "4c1c24f62005e933ecb7d49e6233061769febb85"
+        },
+        {
+          "path": "ngm/ngscrape/spiders/district_court_cases.py",
+          "lines": [
+            184,
+            220
+          ],
+          "url": "https://github.com/gaurav-karki/ngm/blob/174088b33191e0062b9385603571bc3218de2ee1/ngm/ngscrape/spiders/district_court_cases.py#L184-L220",
+          "anchor": "_extract_case_data, _save_cases_and_hearings, parse_daily_list",
+          "git_blob": "bf7197982f1caa7571e716979be445aedaa58600"
+        },
+        {
+          "path": "ngm/utils/db_helpers.py",
+          "lines": [
+            28,
+            44
+          ],
+          "url": "https://github.com/gaurav-karki/ngm/blob/174088b33191e0062b9385603571bc3218de2ee1/ngm/utils/db_helpers.py#L28-L44",
+          "anchor": "get_scraped_dates, mark_date_scraped",
+          "git_blob": "4c1c24f62005e933ecb7d49e6233061769febb85"
+        },
+        {
+          "path": "ngm/ngscrape/spiders/district_case_enrichment.py",
+          "lines": [
+            103,
+            122
+          ],
+          "url": "https://github.com/gaurav-karki/ngm/blob/174088b33191e0062b9385603571bc3218de2ee1/ngm/ngscrape/spiders/district_case_enrichment.py#L103-L122",
+          "anchor": "start_requests",
+          "git_blob": "bdca2b7f04bf50e6435e6f7c6381c4b87e3b1816"
+        },
+        {
+          "path": "ngm/ngscrape/spiders/district_case_enrichment.py",
+          "lines": [
+            175,
+            196
+          ],
+          "url": "https://github.com/gaurav-karki/ngm/blob/174088b33191e0062b9385603571bc3218de2ee1/ngm/ngscrape/spiders/district_case_enrichment.py#L175-L196",
+          "anchor": "handle_error",
+          "git_blob": "bdca2b7f04bf50e6435e6f7c6381c4b87e3b1816"
+        },
+        {
+          "path": "ngm/ngscrape/settings.py",
+          "lines": [
+            37,
+            47
+          ],
+          "url": "https://github.com/gaurav-karki/ngm/blob/174088b33191e0062b9385603571bc3218de2ee1/ngm/ngscrape/settings.py#L37-L47",
+          "anchor": "Retry and collection settings",
+          "git_blob": "d719a8c0401c14f33a02d7d25582f58fc8f0c7bc"
+        },
+        {
+          "path": "ngm/ngscrape/spiders/district_case_enrichment.py",
+          "lines": [
+            376,
+            439
+          ],
+          "url": "https://github.com/gaurav-karki/ngm/blob/174088b33191e0062b9385603571bc3218de2ee1/ngm/ngscrape/spiders/district_case_enrichment.py#L376-L439",
+          "anchor": "_save_enrichment",
+          "git_blob": "bdca2b7f04bf50e6435e6f7c6381c4b87e3b1816"
+        },
+        {
+          "path": "ngm/database/models.py",
+          "lines": [
+            159,
+            163
+          ],
+          "url": "https://github.com/gaurav-karki/ngm/blob/174088b33191e0062b9385603571bc3218de2ee1/ngm/database/models.py#L159-L163",
+          "anchor": "CourtCase timestamps and enrichment status",
+          "git_blob": "ef777d9d6b5683f75489d84033069de84ab96ba6"
+        },
+        {
+          "path": "ngm/database/models.py",
+          "lines": [
+            174,
+            258
+          ],
+          "url": "https://github.com/gaurav-karki/ngm/blob/174088b33191e0062b9385603571bc3218de2ee1/ngm/database/models.py#L174-L258",
+          "anchor": "CourtCaseHearing",
+          "git_blob": "ef777d9d6b5683f75489d84033069de84ab96ba6"
+        },
+        {
+          "path": "ngm/utils/normalizer.py",
+          "lines": [
+            53,
+            98
+          ],
+          "url": "https://github.com/gaurav-karki/ngm/blob/174088b33191e0062b9385603571bc3218de2ee1/ngm/utils/normalizer.py#L53-L98",
+          "anchor": "normalize_date",
+          "git_blob": "8013a3aa16bd608748959aabf9b48e4414e54c55"
+        },
+        {
+          "path": "ngm/ngscrape/spiders/district_court_cases.py",
+          "lines": [
+            190,
+            197
+          ],
+          "url": "https://github.com/gaurav-karki/ngm/blob/174088b33191e0062b9385603571bc3218de2ee1/ngm/ngscrape/spiders/district_court_cases.py#L190-L197",
+          "anchor": "_save_cases_and_hearings",
+          "git_blob": "bf7197982f1caa7571e716979be445aedaa58600"
+        },
+        {
+          "path": "ngm/utils/db_helpers.py",
+          "lines": [
+            37,
+            44
+          ],
+          "url": "https://github.com/gaurav-karki/ngm/blob/174088b33191e0062b9385603571bc3218de2ee1/ngm/utils/db_helpers.py#L37-L44",
+          "anchor": "mark_date_scraped",
+          "git_blob": "4c1c24f62005e933ecb7d49e6233061769febb85"
+        },
+        {
+          "path": "etc/create_ro_user.py",
+          "lines": [
+            173,
+            206
+          ],
+          "url": "https://github.com/gaurav-karki/ngm/blob/174088b33191e0062b9385603571bc3218de2ee1/etc/create_ro_user.py#L173-L206",
+          "anchor": "create_readonly_user",
+          "git_blob": "09132aef3ebc285bcc352249cedecaa31d93fb86"
+        },
+        {
+          "path": "LICENSE",
+          "lines": [
+            1,
+            21
+          ],
+          "url": "https://github.com/gaurav-karki/ngm/blob/174088b33191e0062b9385603571bc3218de2ee1/LICENSE#L1-L21",
+          "anchor": "MIT licence",
+          "git_blob": "8777640034ed389bddc3421ecf71e7cb818d065a"
+        }
+      ]
+    },
+    {
+      "repository": "5hreyanshPandey/InfoSetu_AI_ChatBot",
+      "accessible": true,
+      "default_branch": "main",
+      "head": "a32a26945902205c42f9c35757a1cbda25bda831",
+      "tree": "ceea0c89f5949ed4eaf2a378d84ce211dab0781f",
+      "commit_url": "https://github.com/5hreyanshPandey/InfoSetu_AI_ChatBot/commit/a32a26945902205c42f9c35757a1cbda25bda831",
+      "licence_label": "No explicit grant found",
+      "licence_inspection_status": "complete-tree project licence inspection; API licence absent",
+      "licence_details": {
+        "project": "No top-level/project licence found in complete pinned tree; GitHub metadata licence absent.",
+        "reuse": "No code/data copying assumed. Mirrored government web assets also require separate source/rights review."
+      },
+      "implemented_at_reviewed_head": "Deterministic Flask/CSV article and mock-case lookup, explicit not-found/clarification responses and escaped message rendering.",
+      "bounded_findings": "Named GPT/Voiceflow implementation files are absent from the complete tree. The sampled data/answer contract has no source-version/hash/pinpoint fields; loader and answer-column assumptions differ.",
+      "decision": {
+        "adopt_independently": "Exact lookup with abstention and safe text rendering.",
+        "defer": "Any authority or live-case claims until sources are identified and verified.",
+        "reject": "Unlicensed source/assets and mock records presented as live court information."
+      },
+      "test_and_maintenance_evidence": {
+        "project_tests": "No test files or project CI workflows found in complete pinned tree.",
+        "runtime_receiving": "Not attempted; no runtime acceptance evidence inspected.",
+        "maintenance": "Pinned default-head commit dated 4 August 2025; metadata date alone is not a support guarantee."
+      },
+      "findings_section": "2026-11-15-repository-comparison.md#r11",
+      "source_group": "reasoning",
+      "sources": [
+        {
+          "path": "README.md",
+          "lines": [
+            1,
+            27
+          ],
+          "url": "https://github.com/5hreyanshPandey/InfoSetu_AI_ChatBot/blob/a32a26945902205c42f9c35757a1cbda25bda831/README.md#L1-L27",
+          "anchor": "Description and named runtime files",
+          "git_blob": "f9e2c197a07b1778bc4ffe25de323ee883d463e9"
+        },
+        {
+          "path": "final/coi_casedata/app.py",
+          "lines": [
+            12,
+            54
+          ],
+          "url": "https://github.com/5hreyanshPandey/InfoSetu_AI_ChatBot/blob/a32a26945902205c42f9c35757a1cbda25bda831/final/coi_casedata/app.py#L12-L54",
+          "anchor": "load_csv",
+          "git_blob": "d71df7cfaa2c36565fa227f81efb43a7c6a94249"
+        },
+        {
+          "path": "final/coi_casedata/app.py",
+          "lines": [
+            66,
+            80
+          ],
+          "url": "https://github.com/5hreyanshPandey/InfoSetu_AI_ChatBot/blob/a32a26945902205c42f9c35757a1cbda25bda831/final/coi_casedata/app.py#L66-L80",
+          "anchor": "extract_article_number / extract_filing_number",
+          "git_blob": "d71df7cfaa2c36565fa227f81efb43a7c6a94249"
+        },
+        {
+          "path": "final/coi_casedata/app.py",
+          "lines": [
+            83,
+            132
+          ],
+          "url": "https://github.com/5hreyanshPandey/InfoSetu_AI_ChatBot/blob/a32a26945902205c42f9c35757a1cbda25bda831/final/coi_casedata/app.py#L83-L132",
+          "anchor": "bot_response",
+          "git_blob": "d71df7cfaa2c36565fa227f81efb43a7c6a94249"
+        },
+        {
+          "path": "final/coi_casedata/app.py",
+          "lines": [
+            139,
+            151
+          ],
+          "url": "https://github.com/5hreyanshPandey/InfoSetu_AI_ChatBot/blob/a32a26945902205c42f9c35757a1cbda25bda831/final/coi_casedata/app.py#L139-L151",
+          "anchor": "chat",
+          "git_blob": "d71df7cfaa2c36565fa227f81efb43a7c6a94249"
+        },
+        {
+          "path": "final/coi_casedata/static/main.js",
+          "lines": [
+            102,
+            108
+          ],
+          "url": "https://github.com/5hreyanshPandey/InfoSetu_AI_ChatBot/blob/a32a26945902205c42f9c35757a1cbda25bda831/final/coi_casedata/static/main.js#L102-L108",
+          "anchor": "appendMessage",
+          "git_blob": "aa54c7675abea7e6e84df2b0522a7f4880473a2f"
+        },
+        {
+          "path": "DOJ_Website_Integration/app.py",
+          "lines": [
+            44,
+            69
+          ],
+          "url": "https://github.com/5hreyanshPandey/InfoSetu_AI_ChatBot/blob/a32a26945902205c42f9c35757a1cbda25bda831/DOJ_Website_Integration/app.py#L44-L69",
+          "anchor": "bot_response / ask",
+          "git_blob": "4958f1ed458bc9e6096abbd3f417f40375246b13"
+        }
+      ]
+    },
+    {
+      "repository": "kumar-shubham1/CaseRank",
+      "accessible": true,
+      "default_branch": "main",
+      "head": "effe4e19e95982f82448bb87b61045c4f7df1007",
+      "tree": "b236f67e223389a9f430be9e958913f5dff244eb",
+      "commit_url": "https://github.com/kumar-shubham1/CaseRank/commit/effe4e19e95982f82448bb87b61045c4f7df1007",
+      "licence_label": "No project grant found",
+      "licence_inspection_status": "project tree inspected; dependency licences are not a project grant",
+      "licence_details": {
+        "project": "No project licence found; dependency licences inside committed node_modules do not grant a project-code licence.",
+        "reuse": "Use independently written concepts only; no copied ranking code or licence inference."
+      },
+      "implemented_at_reviewed_head": "Source defines bounded text uploads, case storage, Gemini analysis and weighted priority recommendations.",
+      "bounded_findings": "The imported controller contains unresolved merge-conflict markers. Analysis failures become ordinary Medium/5 fallback objects and may be persisted as success; the smoke script can print success on that fallback.",
+      "decision": {
+        "adopt_independently": "Input bounds, origin flags and typed analysis-unavailable results.",
+        "defer": "Any model use until reproducibility and evidence-bound evaluation exist.",
+        "reject": "Automated judicial/merits priority weights, fallback-as-assessment and cloud transmission of private submissions."
+      },
+      "test_and_maintenance_evidence": {
+        "project_tests": "One live-API diagnostic script, not a reliable assertion suite; no project CI workflows; package scripts only start/dev.",
+        "repository_hygiene": "885 of 902 tracked files are under backend/node_modules; do not count dependency tests/licences as project tests/licence.",
+        "runtime_receiving": "Not executed, installed or connected to Gemini.",
+        "maintenance": "Pinned head dated 28 March 2026; pushed metadata alone does not cure conflict markers."
+      },
+      "findings_section": "2026-11-15-repository-comparison.md#r12",
+      "source_group": "reasoning",
+      "sources": [
+        {
+          "path": "README.md",
+          "lines": [
+            4,
+            15
+          ],
+          "url": "https://github.com/kumar-shubham1/CaseRank/blob/effe4e19e95982f82448bb87b61045c4f7df1007/README.md#L4-L15",
+          "anchor": "Claims and setup",
+          "git_blob": "5edb9c4623e667c5d76557868266459285a6b7c2"
+        },
+        {
+          "path": "backend/controllers/caseController.js",
+          "lines": [
+            21,
+            68
+          ],
+          "url": "https://github.com/kumar-shubham1/CaseRank/blob/effe4e19e95982f82448bb87b61045c4f7df1007/backend/controllers/caseController.js#L21-L68",
+          "anchor": "analyzeAndPersistCase",
+          "git_blob": "9013432a8c90620742aa088e1b4210a9a9d8bbf4"
+        },
+        {
+          "path": "backend/controllers/caseController.js",
+          "lines": [
+            306,
+            348
+          ],
+          "url": "https://github.com/kumar-shubham1/CaseRank/blob/effe4e19e95982f82448bb87b61045c4f7df1007/backend/controllers/caseController.js#L306-L348",
+          "anchor": "unresolved getSchedule merge conflict",
+          "git_blob": "9013432a8c90620742aa088e1b4210a9a9d8bbf4"
+        },
+        {
+          "path": "backend/utils/gemini.js",
+          "lines": [
+            19,
+            220
+          ],
+          "url": "https://github.com/kumar-shubham1/CaseRank/blob/effe4e19e95982f82448bb87b61045c4f7df1007/backend/utils/gemini.js#L19-L220",
+          "anchor": "fallback values / buildResult / analyzeCase",
+          "git_blob": "fc195a7bb4ec79c62bc18832f2a1f76ffe749df6"
+        },
+        {
+          "path": "backend/utils/priorityEngine.js",
+          "lines": [
+            6,
+            60
+          ],
+          "url": "https://github.com/kumar-shubham1/CaseRank/blob/effe4e19e95982f82448bb87b61045c4f7df1007/backend/utils/priorityEngine.js#L6-L60",
+          "anchor": "calculatePriorityScore / rankCases",
+          "git_blob": "09fcd9198d6ea8e2e9b26ff5dd96b060c0d64a0d"
+        },
+        {
+          "path": "backend/utils/fileParser.js",
+          "lines": [
+            9,
+            46
+          ],
+          "url": "https://github.com/kumar-shubham1/CaseRank/blob/effe4e19e95982f82448bb87b61045c4f7df1007/backend/utils/fileParser.js#L9-L46",
+          "anchor": "parseStructuredCaseFile / normalizeFilingDate",
+          "git_blob": "7dfba2191dd08676df6a44373de1fa01eb6207b1"
+        },
+        {
+          "path": "backend/routes/caseRoutes.js",
+          "lines": [
+            6,
+            53
+          ],
+          "url": "https://github.com/kumar-shubham1/CaseRank/blob/effe4e19e95982f82448bb87b61045c4f7df1007/backend/routes/caseRoutes.js#L6-L53",
+          "anchor": "upload and routes",
+          "git_blob": "8d44c0fb35f513b95ede421b8d59ac24b204223f"
+        },
+        {
+          "path": "backend/test-gemini.js",
+          "lines": [
+            9,
+            75
+          ],
+          "url": "https://github.com/kumar-shubham1/CaseRank/blob/effe4e19e95982f82448bb87b61045c4f7df1007/backend/test-gemini.js#L9-L75",
+          "anchor": "testGeminiIntegration",
+          "git_blob": "3a61368f48b0dee182c923a3e7d922d82cdf9234"
+        },
+        {
+          "path": "backend/package.json",
+          "lines": [
+            6,
+            16
+          ],
+          "url": "https://github.com/kumar-shubham1/CaseRank/blob/effe4e19e95982f82448bb87b61045c4f7df1007/backend/package.json#L6-L16",
+          "anchor": "scripts",
+          "git_blob": "e07a1c88ee075b82f21949bf080610037d4ed0bc"
+        },
+        {
+          "path": "backend/server.js",
+          "lines": [
+            1,
+            22
+          ],
+          "url": "https://github.com/kumar-shubham1/CaseRank/blob/effe4e19e95982f82448bb87b61045c4f7df1007/backend/server.js#L1-L22",
+          "anchor": "route import and middleware",
+          "git_blob": "fd9f617ae6589451e3b8d76afec64968667eafbb"
+        }
+      ]
+    },
+    {
+      "repository": "MokshShahh/JudiciaryAI",
+      "accessible": true,
+      "default_branch": "main",
+      "head": "f88fa442af5d2639413d93e15179ccf3dafe3965",
+      "tree": "872c1c21594c76bf244988ecacffa8e7e16441a2",
+      "commit_url": "https://github.com/MokshShahh/JudiciaryAI/commit/f88fa442af5d2639413d93e15179ccf3dafe3965",
+      "licence_label": "No explicit grant found",
+      "licence_inspection_status": "complete-tree project licence inspection; API licence absent",
+      "licence_details": {
+        "project": "No project licence found in complete pinned tree; GitHub metadata licence absent.",
+        "reuse": "No code or committed index reuse assumed."
+      },
+      "implemented_at_reviewed_head": "PDF text/chunk extraction, FAISS similarity retrieval, cloud generation and a React response view.",
+      "bounded_findings": "Page metadata is discarded and each PDF rebuild writes the same index; the prompt suppresses PDF references and output contains no evidence ledger. Raw generated HTML and dangerous pickle loading create conditional risks, not demonstrated exploits.",
+      "decision": {
+        "adopt_independently": "Immutable source/page/chunk identities, versioned multi-document manifests and supported-span abstention.",
+        "defer": "RAG until provenance, safe serialisation/rendering and reproducible dependencies are tested.",
+        "reject": "Citation suppression, raw model HTML, untrusted pickle indexes and unlicensed corpus/code copying."
+      },
+      "test_and_maintenance_evidence": {
+        "project_tests": "Boilerplate React test with missing imported module; no backend test suite; bot/test1.pdf is a document, not a test.",
+        "runtime_receiving": "No model API, PDF parser, pickle, app or dependency executed.",
+        "maintenance": "Pinned default-head commit dated 23 November 2024; many requirements are exact 2024 pins but no current advisory assessment was performed."
+      },
+      "findings_section": "2026-11-15-repository-comparison.md#r13",
+      "source_group": "reasoning",
+      "sources": [
+        {
+          "path": "README.md",
+          "lines": [
+            4,
+            36
+          ],
+          "url": "https://github.com/MokshShahh/JudiciaryAI/blob/f88fa442af5d2639413d93e15179ccf3dafe3965/README.md#L4-L36",
+          "anchor": "PDF-vectorisation/training claims",
+          "git_blob": "5e1b97e6351488510b3b855cff77d2ca94ed641f"
+        },
+        {
+          "path": "bot/add_pdfs.py",
+          "lines": [
+            20,
+            51
+          ],
+          "url": "https://github.com/MokshShahh/JudiciaryAI/blob/f88fa442af5d2639413d93e15179ccf3dafe3965/bot/add_pdfs.py#L20-L51",
+          "anchor": "get_pdf_text / get_text_chunks / get_vector_store",
+          "git_blob": "1594e8d1466073af7d5d3a593f7499166d3124c1"
+        },
+        {
+          "path": "bot/add_pdfs.py",
+          "lines": [
+            53,
+            94
+          ],
+          "url": "https://github.com/MokshShahh/JudiciaryAI/blob/f88fa442af5d2639413d93e15179ccf3dafe3965/bot/add_pdfs.py#L53-L94",
+          "anchor": "process_pdf / main",
+          "git_blob": "1594e8d1466073af7d5d3a593f7499166d3124c1"
+        },
+        {
+          "path": "bot/app.py",
+          "lines": [
+            28,
+            64
+          ],
+          "url": "https://github.com/MokshShahh/JudiciaryAI/blob/f88fa442af5d2639413d93e15179ccf3dafe3965/bot/app.py#L28-L64",
+          "anchor": "get_conversational_chain",
+          "git_blob": "7e62a18950b27e927ef3ac72c7e1525bc964eb73"
+        },
+        {
+          "path": "bot/app.py",
+          "lines": [
+            68,
+            85
+          ],
+          "url": "https://github.com/MokshShahh/JudiciaryAI/blob/f88fa442af5d2639413d93e15179ccf3dafe3965/bot/app.py#L68-L85",
+          "anchor": "question",
+          "git_blob": "7e62a18950b27e927ef3ac72c7e1525bc964eb73"
+        },
+        {
+          "path": "bot/app.py",
+          "lines": [
+            137,
+            152
+          ],
+          "url": "https://github.com/MokshShahh/JudiciaryAI/blob/f88fa442af5d2639413d93e15179ccf3dafe3965/bot/app.py#L137-L152",
+          "anchor": "ask_question",
+          "git_blob": "7e62a18950b27e927ef3ac72c7e1525bc964eb73"
+        },
+        {
+          "path": "front/src/response.jsx",
+          "lines": [
+            1,
+            28
+          ],
+          "url": "https://github.com/MokshShahh/JudiciaryAI/blob/f88fa442af5d2639413d93e15179ccf3dafe3965/front/src/response.jsx#L1-L28",
+          "anchor": "Response",
+          "git_blob": "e4e43ba628a9f9489c86a3544887846ef213ac01"
+        },
+        {
+          "path": "front/src/index.js",
+          "lines": [
+            60,
+            81
+          ],
+          "url": "https://github.com/MokshShahh/JudiciaryAI/blob/f88fa442af5d2639413d93e15179ccf3dafe3965/front/src/index.js#L60-L81",
+          "anchor": "clear request payload",
+          "git_blob": "6d511b05247969c90a801c37e2a66a0e94655908"
+        },
+        {
+          "path": "front/src/App.test.js",
+          "lines": [
+            1,
+            8
+          ],
+          "url": "https://github.com/MokshShahh/JudiciaryAI/blob/f88fa442af5d2639413d93e15179ccf3dafe3965/front/src/App.test.js#L1-L8",
+          "anchor": "default React test",
+          "git_blob": "1f03afeece5ac28064fa3c73a29215037465f789"
+        },
+        {
+          "path": "bot/requirements.txt",
+          "lines": [
+            1,
+            85
+          ],
+          "url": "https://github.com/MokshShahh/JudiciaryAI/blob/f88fa442af5d2639413d93e15179ccf3dafe3965/bot/requirements.txt#L1-L85",
+          "anchor": "dependency inventory",
+          "git_blob": "2e5673ce38e90c5b5e8f5cad8ae23ccce0c2c72f"
+        }
+      ]
+    },
+    {
+      "repository": "nyimbi/caseke",
+      "accessible": true,
+      "default_branch": "master",
+      "head": "ec5f162784b141fd08abe5987efa2a2a62d6e713",
+      "tree": "64f3d40b7ad45235cc72da6c7457cf52858a115f",
+      "commit_url": "https://github.com/nyimbi/caseke/commit/ec5f162784b141fd08abe5987efa2a2a62d6e713",
+      "licence_label": "MIT",
+      "licence_inspection_status": "inspected top-level licence; bundled material separately uncleared",
+      "licence_details": {
+        "project": "Top-level MIT licence, copyright 2017 Nyimbi Odero, read at pinned head.",
+        "reuse": "MIT software terms include preserving notice. This is not a blanket clearance for bundled third-party court documents, government materials, data, images or account exports; no copying proposed."
+      },
+      "implemented_at_reviewed_head": "Preliminary Flask/AppBuilder case, filing, document, hearing and event-log models with admin views.",
+      "bounded_findings": "Event logs remain editable/deletable. The [document observer](https://github.com/nyimbi/caseke/blob/ec5f162784b141fd08abe5987efa2a2a62d6e713/app/mixins.py#L846-L887) hashes text without encoding and assigns a 64-character SHA-256 to a 40-character field, conditional runtime incompatibilities not executed here.",
+      "decision": {
+        "adopt_independently": "Small case/filing/document/hearing graph and explicit actor/reason/source correction events.",
+        "defer": "Any service until current dependency, permission and persistence tests exist.",
+        "reject": "Legacy configuration/data exports, flags-as-enforcement and editable history described as immutable."
+      },
+      "test_and_maintenance_evidence": {
+        "project_tests": "No project tests or CI workflows found in complete pinned tree; pytest/nose/Flask-Testing in requirements are dependencies, not evidence of a suite.",
+        "runtime_receiving": "No database, server, scripts, migrations or dependency installs executed.",
+        "maintenance": "Default-head commit is 2022-09-22, while repository pushed metadata is 2023-02-15; do not conflate dates. Requirements include Flask 0.11.1/AppBuilder 1.8.1/SQLAlchemy 1.1.5, not assessed here against current advisories."
+      },
+      "findings_section": "2026-11-15-repository-comparison.md#r14",
+      "source_group": "reasoning",
+      "sources": [
+        {
+          "path": "README.md",
+          "lines": [
+            1,
+            5
+          ],
+          "url": "https://github.com/nyimbi/caseke/blob/ec5f162784b141fd08abe5987efa2a2a62d6e713/README.md#L1-L5",
+          "anchor": "Preliminary-status statement",
+          "git_blob": "789ed69cc9b54d136db2da384cb07c17236c42cd"
+        },
+        {
+          "path": "README.rst",
+          "lines": [
+            1,
+            10
+          ],
+          "url": "https://github.com/nyimbi/caseke/blob/ec5f162784b141fd08abe5987efa2a2a62d6e713/README.rst#L1-L10",
+          "anchor": "Schema/code-generation claims",
+          "git_blob": "6d6b81a55be28b6ab812236dba3283fcfd065819"
+        },
+        {
+          "path": "LICENSE",
+          "lines": [
+            1,
+            21
+          ],
+          "url": "https://github.com/nyimbi/caseke/blob/ec5f162784b141fd08abe5987efa2a2a62d6e713/LICENSE#L1-L21",
+          "anchor": "MIT terms",
+          "git_blob": "5806a9c8fc82759a3e77cc529ef03b8db57e421c"
+        },
+        {
+          "path": "app/__init__.py",
+          "lines": [
+            14,
+            34
+          ],
+          "url": "https://github.com/nyimbi/caseke/blob/ec5f162784b141fd08abe5987efa2a2a62d6e713/app/__init__.py#L14-L34",
+          "anchor": "Active views import",
+          "git_blob": "30d216ec577994ed775945240f69a454eb41f041"
+        },
+        {
+          "path": "app/models.py",
+          "lines": [
+            105,
+            166
+          ],
+          "url": "https://github.com/nyimbi/caseke/blob/ec5f162784b141fd08abe5987efa2a2a62d6e713/app/models.py#L105-L166",
+          "anchor": "Case",
+          "git_blob": "3db75275ad36cd64a25d497ce2d910d7427dd7fd"
+        },
+        {
+          "path": "app/models.py",
+          "lines": [
+            493,
+            557
+          ],
+          "url": "https://github.com/nyimbi/caseke/blob/ec5f162784b141fd08abe5987efa2a2a62d6e713/app/models.py#L493-L557",
+          "anchor": "Document / Eventlog / Filing",
+          "git_blob": "3db75275ad36cd64a25d497ce2d910d7427dd7fd"
+        },
+        {
+          "path": "app/models.py",
+          "lines": [
+            630,
+            659
+          ],
+          "url": "https://github.com/nyimbi/caseke/blob/ec5f162784b141fd08abe5987efa2a2a62d6e713/app/models.py#L630-L659",
+          "anchor": "Hearing",
+          "git_blob": "3db75275ad36cd64a25d497ce2d910d7427dd7fd"
+        },
+        {
+          "path": "app/mixins.py",
+          "lines": [
+            846,
+            887
+          ],
+          "url": "https://github.com/nyimbi/caseke/blob/ec5f162784b141fd08abe5987efa2a2a62d6e713/app/mixins.py#L846-L887",
+          "anchor": "DocQuery / DocMixin / doc_text_observer",
+          "git_blob": "811c2a72e74ee4279ab3df4f49b3153036ce03f5"
+        },
+        {
+          "path": "app/views.py",
+          "lines": [
+            665,
+            740
+          ],
+          "url": "https://github.com/nyimbi/caseke/blob/ec5f162784b141fd08abe5987efa2a2a62d6e713/app/views.py#L665-L740",
+          "anchor": "DocumentView / EventlogView",
+          "git_blob": "ace785d57182fbf8142f7eb708b5c18dbbde06fa"
+        },
+        {
+          "path": "app/views.py",
+          "lines": [
+            785,
+            822
+          ],
+          "url": "https://github.com/nyimbi/caseke/blob/ec5f162784b141fd08abe5987efa2a2a62d6e713/app/views.py#L785-L822",
+          "anchor": "FilingMultiView",
+          "git_blob": "ace785d57182fbf8142f7eb708b5c18dbbde06fa"
+        },
+        {
+          "path": "config.py",
+          "lines": [
+            5,
+            55
+          ],
+          "url": "https://github.com/nyimbi/caseke/blob/ec5f162784b141fd08abe5987efa2a2a62d6e713/config.py#L5-L55",
+          "anchor": "Auth/upload/configuration literals, values omitted",
+          "git_blob": "efda202769c3b4058f0d74f92e95dadfabac61ab"
+        },
+        {
+          "path": "config.py",
+          "lines": [
+            102,
+            113
+          ],
+          "url": "https://github.com/nyimbi/caseke/blob/ec5f162784b141fd08abe5987efa2a2a62d6e713/config.py#L102-L113",
+          "anchor": "Upload directories",
+          "git_blob": "efda202769c3b4058f0d74f92e95dadfabac61ab"
+        },
+        {
+          "path": "requirements.txt",
+          "lines": [
+            84,
+            112
+          ],
+          "url": "https://github.com/nyimbi/caseke/blob/ec5f162784b141fd08abe5987efa2a2a62d6e713/requirements.txt#L84-L112",
+          "anchor": "Legacy Flask/AppBuilder pins",
+          "git_blob": "f0f5724fdbf253d6eda145c39f485a1111c1d9d5"
+        }
+      ]
+    }
+  ],
+  "atlas_baseline": {
+    "head": "3612e5f512ecdf6bd721e2db25d43bdd1bb3ec68",
+    "observed_tests": "90 tests, 0 skips; demo consistency check and four CLI cases passed locally.",
+    "independently_reproduced_defects": [
+      "ambient Decimal context changes results, formatting or exceptions",
+      "unsupported pinpoint tokens truncated to a shorter recognised locator",
+      "bounded oversized JSON integer escapes as ValueError"
+    ],
+    "repair_status": "100 local tests without skips, recorded demo, four CLI cases and independent runtime/rollback/reapply checks passed; see ../VALIDATION_2026-11-15.md. Hosted integration is recorded separately in actual pull-request checks.",
+    "source_locations": [
+      {
+        "path": "court_integrity/engine.py",
+        "lines": [
+          365,
+          372
+        ],
+        "url": "https://github.com/Albertito-AI/court-submission-integrity/blob/3612e5f512ecdf6bd721e2db25d43bdd1bb3ec68/court_integrity/engine.py#L365-L372"
+      },
+      {
+        "path": "court_integrity/intake.py",
+        "lines": [
+          214,
+          224
+        ],
+        "url": "https://github.com/Albertito-AI/court-submission-integrity/blob/3612e5f512ecdf6bd721e2db25d43bdd1bb3ec68/court_integrity/intake.py#L214-L224"
+      },
+      {
+        "path": "court_integrity/__main__.py",
+        "lines": [
+          28,
+          39
+        ],
+        "url": "https://github.com/Albertito-AI/court-submission-integrity/blob/3612e5f512ecdf6bd721e2db25d43bdd1bb3ec68/court_integrity/__main__.py#L28-L39"
+      }
+    ],
+    "receipts": [
+      {
+        "path": "target_review/defect-receipt.json",
+        "sha256": "19917a897a465478575730cef29b89b1f014f39a2a1cec6662f75bc34b47f5bc"
+      },
+      {
+        "path": "target_review/pinpoint-baseline-matrix.json",
+        "sha256": "c3a0cb089fc7c8a697866ec7dc1c59ab96a839c67a0d1437c8927b2df31d84cd"
+      },
+      {
+        "path": "target_review/review-handoff.json",
+        "sha256": "9e21206a5e9e12bfc5e3cc7b3249c3bbbc27a0602659107f80bbe8bf577146f9"
+      }
+    ]
+  },
+  "development_gates": [
+    "Rigorous core and intake, current slice",
+    "Permitted versioned authority resolver",
+    "Source-bound correction and independent workflow evaluation"
+  ],
+  "evidence_path_note": "report_provenance and atlas_baseline.receipts identify retained internal evidence, not files included in this repository. Upstream evidence is accessible through the pinned GitHub anchors."
+}
