@@ -7,13 +7,18 @@ what the source says. Recheck operative versions before deployment.
 
 | Source | Version and pinpoint | Relevance and limit |
 | --- | --- | --- |
-| Singapore Courts, Guide on the Use of Generative Artificial Intelligence Tools by Court Users | Applies from 1 October 2024; paras 3(2), 5(1), 5(3)(c)-(e); printed p 3 / physical PDF p 4 for para 5 | Requires source/proposition and quotation verification; another generative system's confirmation is insufficient. This supports source-grounded review, not delegating responsibility to this program. |
+| Singapore Courts, Guide on the Use of Generative Artificial Intelligence Tools by Court Users | Applies from 1 October 2024; paras 3(2), 5(1), 5(3)(c)-(e); printed p 4 / physical PDF p 4 for para 5 | Requires source/proposition and quotation verification; another generative system's confirmation is insufficient. This supports source-grounded review, not delegating responsibility to this program. |
 | Tajudin bin Gulam Rasul and another v Suriaya bte Haja Mohideen [2025] SGHCR 33 | 29 September 2025, paras 2-3, 37-38 | Addresses fictitious authority, accuracy and judicial/counterparty resources. It does not quantify our product's likely impact. |
 | Ayinde v London Borough of Haringey; Al-Haroun v Qatar National Bank [2025] EWHC 1383 (Admin) | 6 June 2025, paras 3, 6-8, 36 | Identifies unchecked false material and independent authoritative-source checking; para 36 illustrates a valid neutral citation assigned to the wrong case. It does not authorise automated filing refusal. |
 | Singapore Courts, Production of documents (from 1 April 2022) | Court guidance displayed update 5 March 2026; sections “What production means” and “Affidavits of evidence-in-chief before production of documents” | Helps separate document-production duties from legal-argument checking. The actual governing rule and case-specific order must be checked before operational use. |
 | Judiciary Times, September 2026 | “Hackathon for a Better World”, printed p 9 / physical PDF p 6 | Reports CiteCheck SG's citation-validation proposal. Evidence of an adjacent initiative, not independent verification of that product's accuracy or live deployment. |
 | Council of Europe, CEPEJ European Ethical Charter on AI in judicial systems | Adopted December 2018; five principles, particularly transparency and user control | Ethical design reference; not treated as identical binding law worldwide. |
 | OASIS LegalXML Electronic Court Filing committee / standards index | ECF 5.01, Committee Specification 01, 29 September 2023; also lists ECF 5.0 (2019) | Committee and standards-index versions inspected; direct 5.01 specification fetch failed. No conformance or universal court compatibility is claimed. |
+
+Pinpoint correction, 15 November 2026: the Singapore guide passage at paragraph
+5 is on printed page 4 and physical PDF page 4. The official six-page PDF was
+reopened and the page image checked. This corrects the former printed-page label
+without renewing the other 1 November source checks or changing the legal claim.
 
 ## Exact source URLs
 
