@@ -35,7 +35,10 @@ def load_package(path: Path) -> tuple[dict, str]:
         raise InputError("Input exceeds 5 MiB limit")
     try:
         package = json.loads(data.decode("utf-8"), object_pairs_hook=_pairs, parse_constant=_constant)
-    except (UnicodeError, json.JSONDecodeError, RecursionError) as exc:
+    except InputError:
+        # Keep precise duplicate-key and non-standard-constant diagnostics.
+        raise
+    except (UnicodeError, ValueError, RecursionError) as exc:
         raise InputError("Input must be bounded UTF-8 JSON") from exc
     return package, hashlib.sha256(data).hexdigest()
 

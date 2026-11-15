@@ -15,6 +15,7 @@ from pathlib import Path
 import re
 import stat
 import sys
+import unicodedata
 import xml.etree.ElementTree as ET
 import zipfile
 from typing import Any
@@ -35,7 +36,33 @@ CITATION = re.compile(
     r'(?:\s+\((?:Admin|Ch|Comm|Fam|KB|QB|TCC|Pat|IPEC|SCCO)\))?(?!\w)'
 )
 PINPOINT = re.compile(r'^\s*(?:at\s+)?(?:\[(\d{1,6})\]|paras?\.?\s+(\d{1,6}))', re.I)
-RANGE_OR_LIST = re.compile(r'^\s*(?:[-\u2013\u2014]|,|and\s+|to\s+)\s*\[?\d', re.I)
+RANGE_OR_LIST = re.compile(r'^\s*(?:(?:[-\u2013\u2014/,;]|(?:and|or|to)\s+)\s*\[?\d|\[\d)', re.I)
+
+
+def _complete_pinpoint_suffix(suffix: str) -> bool:
+    """Accept a token boundary, never a prefix of an unsupported locator.
+
+    This is deliberately conservative. Unsupported subparagraphs and attached
+    suffixes need explicit annotation; this is not a general legal citation parser.
+    """
+    if not suffix:
+        return True
+    if not suffix[0].isspace():
+        # A closing punctuation run must end or be separated from further text.
+        # Thus 12. is supported, but 12.5, 12A, 12(1) and invisible suffixes are not.
+        return all(char in '.,;:!?)]}\'"\u2019\u201d' for char in suffix.split(None, 1)[0])
+    remainder = suffix.lstrip()
+    if not remainder:
+        return True
+    if unicodedata.category(remainder[0])[0] in {'M', 'C'}:
+        return False
+    # Distinguishing a subparagraph from a parenthetical explanation needs
+    # annotation; do not silently choose the preceding numeric prefix.
+    if remainder[0] in '([':
+        return False
+    if re.match(r'^[.:/\\]\s*\d', remainder):
+        return False
+    return True
 
 
 def _read_bytes(path: Path) -> bytes:
@@ -217,7 +244,7 @@ def prepare_package(document: dict, sources: list | None = None, *, jurisdiction
             if pm:
                 if RANGE_OR_LIST.match(tail[pm.end():]):
                     pinpoint_state = 'RANGE_OR_LIST_REQUIRES_ANNOTATION'
-                else:
+                elif _complete_pinpoint_suffix(tail[pm.end():]):
                     locator = 'para:' + (pm.group(1) or pm.group(2))
                     pinpoint_state = 'SINGLE_PARAGRAPH_CANDIDATE'
             candidates.append({'block_id': segment['id'], 'citation_text': match.group(),

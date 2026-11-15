@@ -51,6 +51,15 @@ translation, ellipses or citation style. A quotation matched at a different
 location is flagged, never silently reassigned. Matching a substring does not
 establish that omitted qualifications are immaterial.
 
+Automatic document intake has a narrower profile than explicit structured
+locators: it recognises a single complete numeric paragraph token of at most six
+digits. It leaves unsupported suffixes, longer tokens, ranges and lists
+unrecognised instead of silently shortening them. Attached prose and following
+parenthetical or bracketed text can also cause conservative abstention, including
+ordinary parenthetical commentary. Recognition is not exhaustive. The original
+text and offsets remain available for review; explicit locators such as
+`para:12A` and `section:12(2)` remain valid in structured input.
+
 ## Bounded logic and coherence annotations
 
 Optional claim `assertion` has six strings: `key`, `context`, `position`,
@@ -63,6 +72,13 @@ Each arithmetic record has `id`, `block_id`, `components`, `total`, `unit`.
 Amounts are bounded decimal strings, not binary floats. Only addition in one
 declared unit is supported. The operator must map the numbers and their meaning;
 no currency conversion, tax, interest or damages rule is applied.
+
+The arithmetic context is defined locally, including precision, rounding,
+exponent bounds, traps and formatting. Caller Decimal settings and flags are
+preserved. Each number permits at most 18 integer and 8 fractional digits, and a
+sum at most 1,000 components; 64-digit precision exceeds the 29 coefficient
+digits required by these bounds. This is a reproducibility guarantee for the
+bounded addition check, not validation of the amounts' factual or legal meaning.
 
 Each chronology record has `id`, `block_id`, `description`, `earlier`, `later`.
 Dates must be valid `YYYY-MM-DD`. It tests only the declared ordering, not an
@@ -92,3 +108,8 @@ CLI exit `0`: reports generated. Exit `2`: invalid input or IO failure. These ar
 process outcomes, never filing outcomes. Output folders and files are created
 exclusively. Cleanup after an ordinary write failure is best-effort, not atomic
 transactionality. Real sensitive files are not approved inputs for this alpha.
+
+JSON decoding failures, including interpreter limits on integer conversion, are
+invalid input. The CLI reports exit `2` with `filing_decision: NONE` and creates no
+report directory. Duplicate-key and non-finite-number diagnostics remain
+specific; the implementation does not disable interpreter safeguards.

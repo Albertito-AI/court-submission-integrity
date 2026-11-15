@@ -7,7 +7,7 @@ from __future__ import annotations
 
 from collections import Counter, defaultdict, deque
 from datetime import date
-from decimal import Decimal, InvalidOperation, localcontext
+from decimal import Context, Decimal, DivisionByZero, InvalidOperation, Overflow, ROUND_HALF_EVEN, localcontext
 import hashlib
 import json
 import re
@@ -362,14 +362,21 @@ def check_submission(package: dict[str, Any]) -> dict[str, Any]:
         if a["block_id"] not in blocks:
             finding("BLOCK_NOT_FOUND", "CHECK_FINDING", a["id"],
                     "Arithmetic annotation references an absent block.", "Repair the annotation.")
-        with localcontext() as context:
-            context.prec = 64
+        # All settings are explicit: neither the caller nor mutable DefaultContext
+        # may change an identical package's arithmetic or displayed result.
+        # At most 1,000 bounded terms need at most 29 coefficient digits.
+        arithmetic_context = Context(prec=64, rounding=ROUND_HALF_EVEN,
+                                     Emin=-999999, Emax=999999, capitals=1, clamp=0,
+                                     flags=[], traps=[InvalidOperation, DivisionByZero, Overflow])
+        with localcontext(arithmetic_context):
             total = sum((Decimal(x) for x in a["components"]), Decimal(0))
-        if total != Decimal(a["total"]):
+            differs = total != Decimal(a["total"])
+            computed_sum = str(total)
+        if differs:
             finding("ARITHMETIC_MISMATCH", "CHECK_FINDING", a["id"],
                     "The supplied components do not sum to the supplied total in the declared single unit.",
                     "Check the transcription, components, unit and intended calculation.",
-                    {"components": a["components"], "stated_total": a["total"], "computed_sum": str(total), "unit": a["unit"]})
+                    {"components": a["components"], "stated_total": a["total"], "computed_sum": computed_sum, "unit": a["unit"]})
     for t in p.get("chronology", []):
         if t["block_id"] not in blocks:
             finding("BLOCK_NOT_FOUND", "CHECK_FINDING", t["id"],
