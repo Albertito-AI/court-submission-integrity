@@ -60,8 +60,27 @@ generation succeeded, not that a submission is accurate, admissible or fit to fi
 The core, TXT/Markdown and bounded DOCX intake use Python's standard library.
 No API key, model call, network connection or paid service is needed after obtaining
 the source. Python 3.10+ is the compatibility target; the recorded local checks used
-**CPython 3.13.5/Linux**. PDF intake needs an already installed optional `pypdf`
-parser. Without it, two PDF tests are skipped. No package is installed automatically.
+**CPython 3.13.5/Linux**. No package is installed automatically.
+
+**PDF intake now requires Linux and the optional `pypdf` parser installed in the
+same Python interpreter or virtual environment. Windows, macOS and other
+unsupported platforms reject PDF input instead of parsing it without verified
+resource limits.** Core, TXT/Markdown and DOCX intake retain their existing
+behaviour. For PDF use, create a virtual environment and install `.[pdf]` there;
+the isolated worker intentionally ignores `PYTHONPATH` and user-site packages.
+
+PDF parsing runs in a separate process with a 1 GiB address-space cap, 35 CPU
+seconds, a 45-second parent deadline and a 16 MiB result-file cap. A stricter
+existing soft or hard OS limit is retained. Failure to install and verify these limits stops
+the operation; no partial result or inline fallback is accepted. This limits
+resource consumption, not filesystem or network access, and does not authorise
+real-case processing. The optional external `jbig2dec` decoder is disabled; a
+text stream requiring it is refused. See the [threat model](docs/THREAT_MODEL.md) and
+[dated PDF isolation checks](docs/VALIDATION_2026-11-22_PDF.md).
+
+Tests that require the Linux worker are explicitly skipped on unsupported
+platforms; tests that require the optional parser are skipped when it is absent.
+The platform-rejection tests still run. Skips are not passing PDF checks.
 
 The [automated regression workflow](.github/workflows/tests.yml) runs the unittest
 suite and independently verifies the recorded fictional demonstration on Python
