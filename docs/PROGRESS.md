@@ -101,3 +101,15 @@ Next owner/action: the development task should complete a bounded authoritative-
 source-resolution requirement/baseline; the Wednesday checkpoint must show evidence,
 progress or a dated reason for deferral. Independent human evaluation and any
 court shadow pilot retain their separate permission and readiness requirements.
+
+## 22 November 2026: optional PDF parser security maintenance
+
+The optional `pdf` extra now requires `pypdf>=7.1.1,<8`, replacing the range
+that excluded current upstream parser fixes. The
+[dated dependency record](DEPENDENCY_SECURITY_2026-11-22.md) contains the
+advisory evidence, verified wheel hash and remaining parser-isolation boundary.
+On isolated Linux/CPython 3.12.14 with pypdf 7.1.1, all 100 existing tests passed
+without skips; the four CLI examples and recorded demonstration also passed.
+These are fictional-data engineering observations. Existing installations need
+an explicit parser upgrade; real-case use still requires the documented
+isolation, rights and independent evaluation gates.
