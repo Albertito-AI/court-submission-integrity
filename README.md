@@ -149,3 +149,7 @@ professional, security, accessibility and court-user evaluation remain outstandi
 Public visibility is not an open-source licence. [RIGHTS.md](RIGHTS.md) preserves
 the original reserved-rights position. [AUTHORS.md](AUTHORS.md) records Albert's
 product direction and AI assistance without inventing independent human review.
+
+## Sport governance teaching application
+
+Preflight a fictional appeal bundle for missing annexes and unreliable authorities. The panel takes responsibility for jurisdiction and reasons. [Exercise and records](https://github.com/Albertito-AI/sport-governance-and-administration/blob/main/cases/14-maxwell-cycling-nomination.md) · [Albert Tan’s book and teaching companion](https://alberttansinhon.com/sport-governance/).
